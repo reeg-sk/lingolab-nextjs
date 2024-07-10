@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -13,6 +13,7 @@ export default function Header({
     { title: "O nás", url: "/o-nas" },
     { title: "Cenník", url: "/cennik" },
     { title: "Blog", url: "/blog" },
+    { title: "Kontakt", url: "/kontakt" },
   ],
 }: {
   navLinks?: Array<{ title: string; url: string }>;
@@ -23,7 +24,9 @@ export default function Header({
 
   return (
     <>
-      <header className="fixed left-1/2 -translate-x-1/2 z-50 w-full flex-none text-sm font-semibold leading-6 text-slate-900 bg-white/75">
+      <header
+        className={`fixed left-1/2 -translate-x-1/2 z-50 w-full flex-none text-sm font-semibold leading-6 text-slate-900 bg-white/75`}
+      >
         <nav
           aria-label="Global"
           className="container mx-auto max-w-7xl max-w-container"
@@ -54,26 +57,21 @@ export default function Header({
                   {title}
                 </Link>
               ))}
-              <div className="bg-primary lg:bg-transparent lg:rounded-none rounded-lg lg:flex lg:items-center lg:border-l lg:border-slate-900/15 lg:pl-4">
-                <Link
-                  href="/#"
-                  className="block text-white p-4 lg:p-2 lg:text-slate-600 hover:text-slate-900"
-                >
-                  Kontakt
-                </Link>
-              </div>
             </div>
             <div className="flex items-center gap-3 mr-3">
               <div>
                 <a
-                  className="inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 bg-slate-900 text-white hover:bg-slate-700 -my-2.5 ml-8 transition-all"
+                  className="inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 bg-slate-900 text-white hover:bg-slate-700 -my-2.5 ml-4 transition-all"
                   href="https://klub.lingolab.sk/"
                   target="_blank"
                   rel="noopener"
                 >
                   <span>
-                    Lingo&nbsp;klub 
-                    <span aria-hidden="true" className="hidden lg:inline-block ml-2">
+                    Lingo&nbsp;klub
+                    <span
+                      aria-hidden="true"
+                      className="hidden lg:inline-block ml-2"
+                    >
                       →
                     </span>
                   </span>

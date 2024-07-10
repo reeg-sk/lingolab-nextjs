@@ -5,6 +5,7 @@ import { findFlagUrlByIso2Code } from "country-flags-svg";
 import Link from "next/link";
 
 import HeroVideo from "../util/HeroVideo";
+import { AnimatePresence, motion } from "framer-motion";
 
 type Language = {
   title: string;
@@ -97,15 +98,14 @@ export default function Hero({
 }) {
   const [activeHoverLanguage, setActiveHoverLanguage] =
     useState<Language | null>(null);
+
   return (
     <section
       id="hero"
       className="relative min-h-screen container mx-auto max-w-7xl flex justify-center flex-col"
     >
       <HeroVideo src="/videos/promo-video.mp4" />
-      <div
-        className="mt-12 mb-16 lg:mb-32 m-4"
-      >
+      <div className="mt-12 mb-16 lg:mb-32 m-4">
         <h1 className="text-3xl mb-12 font-extrabold sm:text-5xl sm:leading-[3.5rem] text-balance">
           Naučíme vás{" "}
           <span className="bg-gradient-to-r from-white to-indigo-300">
@@ -136,22 +136,42 @@ export default function Hero({
             Ponúkame viac, ako <span className="text-primary">10 jazykov</span>
           </h2>
           <div className="hidden sm:block">
-            {activeHoverLanguage && (
-              <div className="flex gap-2 items-center">
-                <img
-                  src={findFlagUrlByIso2Code(activeHoverLanguage?.flag)}
-                  width={24}
-                  alt={`Kurz pre jazyk ${activeHoverLanguage?.title}`}
-                />
-                <span className="text-slate-700">
-                  {activeHoverLanguage?.title}
-                </span>
-                <span>
-                  – {activeHoverLanguage?.mentors.length} lektor
-                  {activeHoverLanguage?.mentors.length > 1 ? "i" : ""}
-                </span>
-              </div>
-            )}
+            <AnimatePresence>
+              {activeHoverLanguage && (
+                <motion.div
+                  initial={{
+                    opacity: 0,
+                    y: 20,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  exit={{
+                    opacity: 0,
+                    y: 20,
+                  }}
+                  className="flex gap-2 items-center"
+                >
+                  <motion.img
+                    animate={{
+                      rotate: [0, 10, -10, 10, -10, 0],
+                    }}
+                    exit={{ opacity: 0 }}
+                    src={findFlagUrlByIso2Code(activeHoverLanguage?.flag)}
+                    width={24}
+                    alt={`Kurz pre jazyk ${activeHoverLanguage?.title}`}
+                  />
+                  <span className="text-slate-700">
+                    {activeHoverLanguage?.title}
+                  </span>
+                  <span>
+                    – {activeHoverLanguage?.mentors.length} lektor
+                    {activeHoverLanguage?.mentors.length > 1 ? "i" : ""}
+                  </span>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
         <div className="relative grid sm:grid-cols-2 lg:grid-cols-3">
