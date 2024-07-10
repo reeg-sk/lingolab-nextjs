@@ -4,6 +4,8 @@ import { useState } from "react";
 import { findFlagUrlByIso2Code } from "country-flags-svg";
 import Link from "next/link";
 
+import HeroVideo from "../util/HeroVideo";
+
 type Language = {
   title: string;
   flag: string;
@@ -95,13 +97,15 @@ export default function Hero({
 }) {
   const [activeHoverLanguage, setActiveHoverLanguage] =
     useState<Language | null>(null);
-
   return (
     <section
       id="hero"
       className="relative min-h-screen container mx-auto max-w-7xl flex justify-center flex-col"
     >
-      <div className="mt-12 mb-16 lg:mb-32 m-4">
+      <HeroVideo src="/videos/promo-video.mp4" />
+      <div
+        className="mt-12 mb-16 lg:mb-32 m-4"
+      >
         <h1 className="text-3xl mb-12 font-extrabold sm:text-5xl sm:leading-[3.5rem] text-balance">
           Naučíme vás{" "}
           <span className="bg-gradient-to-r from-white to-indigo-300">

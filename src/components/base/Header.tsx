@@ -34,7 +34,7 @@ export default function Header({
               href="/"
             >
               <Logo />
-              LingoLab
+              <span className="hidden sm:block">LingoLab</span>
             </Link>
             <div
               className={`${
@@ -54,7 +54,7 @@ export default function Header({
                   {title}
                 </Link>
               ))}
-              <div className="bg-primary lg:bg-transparent lg:rounded-none rounded-lg lg:flex lg:items-center lg:border-l lg:border-slate-900/15 lg:pl-8">
+              <div className="bg-primary lg:bg-transparent lg:rounded-none rounded-lg lg:flex lg:items-center lg:border-l lg:border-slate-900/15 lg:pl-4">
                 <Link
                   href="/#"
                   className="block text-white p-4 lg:p-2 lg:text-slate-600 hover:text-slate-900"
@@ -63,7 +63,7 @@ export default function Header({
                 </Link>
               </div>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 mr-3">
               <div>
                 <a
                   className="inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 bg-slate-900 text-white hover:bg-slate-700 -my-2.5 ml-8 transition-all"
@@ -72,7 +72,7 @@ export default function Header({
                   rel="noopener"
                 >
                   <span>
-                    Lingo klub 
+                    Lingo&nbsp;klub 
                     <span aria-hidden="true" className="hidden lg:inline-block ml-2">
                       →
                     </span>
