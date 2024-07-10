@@ -61,8 +61,8 @@ export default function Header({
             <div className="flex items-center gap-3 mr-3">
               <div>
                 <a
-                  className="inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 bg-slate-900 text-white hover:bg-slate-700 -my-2.5 ml-4 transition-all"
-                  href="https://klub.lingolab.sk/"
+                  className="inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 bg-slate-600 text-white hover:bg-slate-700 -my-2.5 ml-4 transition-all"
+                  href="/#https://klub.lingolab.sk/"
                   target="_blank"
                   rel="noopener"
                 >

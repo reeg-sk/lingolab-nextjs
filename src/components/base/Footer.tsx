@@ -7,9 +7,9 @@ export default function Footer({
   footerLinks = [
     {
       title: "Všeobecné obchodné podmienky",
-      url: "/vseobecne-obchodne-podmienky",
+      url: "/legal/vseobecne-obchodne-podmienky",
     },
-    { title: "Ochrana osobných údajov", url: "/ochrana-osobnych udajov" },
+    { title: "Ochrana osobných údajov", url: "/legal/ochrana-osobnych udajov" },
   ],
   companyData = {
     name: "Lingolab s. r. o.",

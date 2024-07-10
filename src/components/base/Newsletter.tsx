@@ -8,7 +8,9 @@ export default function Newsletter() {
         Prihláste sa na odber newslettera a získavajte najnovšie informácie
         akciách a zľavy priamo v emailovej schránke.
       </p>
-      <div className="mt-6 flex flex-col md:flex-row max-w-md gap-x-4 gap-y-2">
+      <form
+        className="mt-6 flex flex-col md:flex-row max-w-md gap-x-4 gap-y-2"
+      >
         <label htmlFor="email-address" className="sr-only">
           Email address
         </label>
@@ -23,10 +25,11 @@ export default function Newsletter() {
         <button
           type="submit"
           className="w-full md:w-fit flex-none rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-600"
+
         >
           Odoberať
         </button>
-      </div>
+      </form>
     </div>
   );
 }
