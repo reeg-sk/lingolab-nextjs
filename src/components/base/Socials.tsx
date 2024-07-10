@@ -1,4 +1,8 @@
-import { IconBrandFacebook, IconBrandInstagram, IconBrandX } from "@tabler/icons-react";
+import {
+  IconBrandFacebook,
+  IconBrandInstagram,
+  IconBrandX,
+} from "@tabler/icons-react";
 
 export default async function Socials() {
   const socials = [
@@ -23,6 +27,7 @@ export default async function Socials() {
     <div className="flex gap-3 items-center justify-center">
       {socials.map(({ name, Icon, link }) => (
         <a
+          key={name}
           href={link}
           target="_blank"
           rel="noopener noreferrer"

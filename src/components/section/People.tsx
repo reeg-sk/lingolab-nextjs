@@ -55,7 +55,7 @@ export default function People({
           className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 sm:gap-y-16 xl:col-span-2"
         >
           {people.map(({ name, teaching, image }) => (
-            <li>
+            <li key={name}>
               <a
                 href="/#"
                 className="group flex items-center gap-x-6 group hover:bg-slate-50 rounded-full"

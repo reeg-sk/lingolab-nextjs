@@ -48,7 +48,10 @@ export default function Reviews({
           className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 sm:gap-y-16 xl:col-span-2"
         >
           {reviews.map(({ name, image, rating, text, date }) => (
-            <li className="p-4 py-6 bg-white bg-opacity-75 hover:bg-slate-50 hover:bg-opacity-50 rounded-lg transition-all">
+            <li
+              key={name}
+              className="p-4 py-6 bg-white bg-opacity-75 hover:bg-slate-50 hover:bg-opacity-50 rounded-lg transition-all"
+            >
               <div className="flex items-center mb-4">
                 <img
                   src={image}
@@ -62,6 +65,7 @@ export default function Reviews({
                       .fill(0)
                       .map((_, i) => (
                         <IconStarFilled
+                          key={i}
                           className={`h-5 w-5 ${
                             i < rating ? "text-yellow-400" : "text-slate-500"
                           }`}
