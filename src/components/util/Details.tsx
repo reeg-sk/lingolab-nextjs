@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import { useState } from "react";
 
 const Details = ({
@@ -45,7 +46,9 @@ const Details = ({
         </span>
       </button>
       {opened && (
-        <p className="text-gray-600 transition-all overflow-hidden">{answer}</p>
+        <motion.p className="text-gray-600 transition-all overflow-hidden">
+          {answer}
+        </motion.p>
       )}
     </div>
   );

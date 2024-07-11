@@ -33,7 +33,7 @@ export default function Header({
         >
           <div className="relative flex items-center justify-between py-4 xl:py-[2.125rem]">
             <Link
-              className="px-4 text-lg flex items-center gap-3 text-slate-900"
+              className="pl-4 text-lg flex items-center gap-3 text-slate-900"
               href="/"
             >
               <Logo />
@@ -58,7 +58,7 @@ export default function Header({
                 </Link>
               ))}
             </div>
-            <div className="flex items-center gap-3 mr-3">
+            <div className="flex items-center gap-3 mr-3 lg:mr-0">
               <div>
                 <a
                   className="inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 bg-slate-600 text-white hover:bg-slate-700 -my-2.5 ml-4 transition-all"

@@ -4,7 +4,7 @@ export default function HeroVideo({ src }: { src: string }) {
   
   return (
     <div
-      className="hidden opacity-60 hover:opacity-75 group lg:block overflow-hidden absolute top-0 xl:top-12 right-4 text-primary/80"
+      className="hidden opacity-60 group lg:block overflow-hidden absolute top-0 xl:top-12 right-4 text-primary/80"
     >
       <video
         className="transition-all relative border-4 group-hover:border-primary rounded-full object-cover w-72 h-72 xl:w-96 xl:h-96"

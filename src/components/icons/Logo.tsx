@@ -1,11 +1,14 @@
+import { motion } from "framer-motion";
+
 export default function Logo() {
   return (
-    <svg
+    <motion.svg
       width="53"
       height="62"
       viewBox="0 0 53 62"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      whileHover={{ opacity: 0.9 }}
     >
       <path
         d="M9.97875 0.0469553C4.43493 0.542329 0.136572 4.33109 0.00646973 8.95106V49.1696H11.5703V0L9.97875 0.0469553Z"
@@ -31,6 +34,6 @@ export default function Logo() {
         d="M40.8143 49.8531C36.5925 57.1739 30.3311 61.4239 23.698 61.4453C23.632 61.4509 23.6125 61.454 23.5261 61.4456L23.5341 61.6338H52.5737V49.8531H40.8143Z"
         fill="white"
       />
-    </svg>
+    </motion.svg>
   );
 }
