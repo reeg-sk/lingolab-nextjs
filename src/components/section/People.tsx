@@ -94,7 +94,7 @@ export default function People({
             className="group w-full transition-all md:w-fit flex gap-2 items-center rounded-md border border-primary text-primary py-3 px-8 lg:px-5 text-sm font-semibold shadow-sm hover:bg-indigo-50"
           >
             <IconUserCheck />
-            Je nás ešte oveľa viac
+            Je nás ešte viac
           </a>
           <a
             href="/lektori/nabor"

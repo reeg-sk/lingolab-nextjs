@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 
 import Logo from "../icons/Logo";
 import { IconMenu } from "@tabler/icons-react";
+import { motion } from "framer-motion";
 
 export default function Header({
   navLinks = [
@@ -39,7 +40,7 @@ export default function Header({
               <Logo />
               <span className="hidden sm:block">LingoLab</span>
             </Link>
-            <div
+            <motion.div
               className={`${
                 navbarOpen
                   ? "flex border-b flex-col py-4 absolute top-20 bg-white w-full"
@@ -57,11 +58,11 @@ export default function Header({
                   {title}
                 </Link>
               ))}
-            </div>
+            </motion.div>
             <div className="flex items-center gap-3 mr-3 lg:mr-0">
               <div>
                 <a
-                  className="inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 bg-slate-600 text-white hover:bg-slate-700 -my-2.5 ml-4 transition-all"
+                  className="inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 bg-slate-600 text-white hover:bg-slate-700 -my-2.5 ml-4 transition-all lg:mr-4 xl:mr-0"
                   href="/#https://klub.lingolab.sk/"
                   target="_blank"
                   rel="noopener"

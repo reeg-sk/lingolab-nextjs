@@ -57,7 +57,7 @@ export default function Footer({
           </div>
         </div>
         <div className="flex flex-col md:flex-row text-center gap-4 md:justify-between text-slate-200 mt-12 py-12 border-t border-gray-600 border-opacity-45">
-          <p>Copyright &copy; lingolab.sk {new Date().getFullYear()}</p>
+          <p>Copyright &copy; lingolab.sk {new Date().getFullYear()} <span className="text-sm text-slate-300">[v24.1 <a target="_blank" href="https://andrej.kazmirsky.com">AK</a></span>]</p>
           <Socials />
         </div>
       </div>

@@ -1,3 +1,4 @@
+"use client";
 import { findFlagUrlByIso2Code } from "country-flags-svg";
 import Link from "next/link";
 import { Language } from "../interfaces";
@@ -6,9 +7,11 @@ import { IconCalendarCheck } from "@tabler/icons-react";
 export default function LanguageList({
   languages = [],
   isHero = false,
+  setActiveHoverLanguage,
 }: {
   languages: Language[];
   isHero?: boolean;
+  setActiveHoverLanguage?: any;
 }) {
   return (
     <>
@@ -19,6 +22,11 @@ export default function LanguageList({
           className={`group relative p-6 py-8 border-separate border border-slate-100 transition-all hover:bg-slate-100 bg-white hover:z-10 hover:border-indigo-400 grid grid-cols-2 ${
             !isHero ? "md:grid-cols-3" : ""
           } items-center md:justify-start`}
+          onMouseEnter={() =>
+            setActiveHoverLanguage
+              ? setActiveHoverLanguage({ title, flag, mentors, price })
+              : null
+          }
         >
           <div>
             <div className="flex items-baseline gap-3">

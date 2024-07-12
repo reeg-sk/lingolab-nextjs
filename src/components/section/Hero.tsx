@@ -178,7 +178,7 @@ export default function Hero({
           </div>
         </div>
         <div className="relative grid sm:grid-cols-2 lg:grid-cols-3">
-          <LanguageList isHero languages={languages} />
+          <LanguageList isHero languages={languages} setActiveHoverLanguage={setActiveHoverLanguage} />
           <Link
             href="/kurzy"
             className="group p-6 py-8 border-separate border border-slate-200 bg-indigo-50 text-primary flex items-center hover:bg-indigo-100 hover:border-indigo-400"

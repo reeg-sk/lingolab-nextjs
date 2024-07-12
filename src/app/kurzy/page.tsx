@@ -1,9 +1,6 @@
 import StyleIndex from "@/components/graphics/StyleIndex";
 import CourseListing from "@/components/util/CourseListing";
-import LanguageList from "@/components/util/LanguageList";
 import LectureOffer from "@/components/util/LectureOffer";
-import { IconCalendarFilled } from "@tabler/icons-react";
-import Link from "next/link";
 
 export default function Courses({
   courses = {
