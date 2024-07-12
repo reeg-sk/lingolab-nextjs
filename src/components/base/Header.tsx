@@ -21,6 +21,8 @@ export default function Header({
 }) {
   const pathname = usePathname();
 
+  useEffect(() => setNavbarOpen(false), [pathname]);
+
   let [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
