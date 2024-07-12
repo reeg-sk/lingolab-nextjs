@@ -1,6 +1,7 @@
 import { findFlagUrlByIso2Code } from "country-flags-svg";
 import StylePeople from "../graphics/StylePeople";
 import { IconUserCheck } from "@tabler/icons-react";
+import PersonLink from "../util/PersonLink";
 
 export default function People({
   people = [
@@ -54,37 +55,9 @@ export default function People({
           role="list"
           className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 sm:gap-y-16 xl:col-span-2"
         >
-          {people.map(({ name, teaching, image }) => (
-            <li key={name}>
-              <a
-                href="/#"
-                className="group flex items-center gap-x-6 group hover:bg-slate-50 rounded-full"
-              >
-                <img
-                  className="h-16 w-16 md:h-24 md:w-24 rounded-full border-2 border-transparent group-hover:border-primary group-hover:transform group-hover:scale-105 transition-all duration-300"
-                  src={image}
-                  alt={name + " selfie"}
-                />
-                <div>
-                  <h3 className="text-lg font-semibold leading-7 tracking-tight text-gray-900">
-                    {name}
-                  </h3>
-                  <div className="flex gap-2 text-base leading-6 text-slate-700">
-                    <img
-                      src={findFlagUrlByIso2Code(teaching.flag)}
-                      width={24}
-                      alt={`Vlajka - ${teaching.language}`}
-                    />
-                    <p>{teaching.language}</p>
-                  </div>
-                </div>
-                <p
-                  className="opacity-90 md:opacity-0 transition-opacity delay-50 group-hover:opacity-90 flex w-12 h-12 rounded-full justify-center items-center bg-slate-100 ml-auto mr-4"
-                  aria-hidden="true"
-                >
-                  →
-                </p>
-              </a>
+          {people.map(person => (
+            <li key={person.name}>
+              <PersonLink person={person} />
             </li>
           ))}
         </ul>
