@@ -6,16 +6,8 @@ import Link from "next/link";
 
 import HeroVideo from "../util/HeroVideo";
 import { AnimatePresence, motion } from "framer-motion";
-
-type Language = {
-  title: string;
-  flag: string;
-  price: number;
-  mentors: Array<{
-    fullName: string;
-    image: string;
-  }>;
-};
+import { Language } from "../interfaces";
+import LanguageList from "../util/LanguageList";
 
 export default function Hero({
   languages = [
@@ -23,6 +15,7 @@ export default function Hero({
       title: "Angličtina",
       flag: "GB",
       price: 15,
+      slug: "anglictina",
       mentors: [
         {
           fullName: "Leslie Alexander",
@@ -50,6 +43,7 @@ export default function Hero({
       title: "Nemčina",
       flag: "DE",
       price: 20,
+      slug: "nemcina",
       mentors: [
         {
           fullName: "Courtney Henry",
@@ -62,6 +56,7 @@ export default function Hero({
       title: "Francúzština",
       flag: "FR",
       price: 25,
+      slug: "francuzstina",
       mentors: [
         {
           fullName: "Dries Vincent",
@@ -74,6 +69,7 @@ export default function Hero({
       title: "Španielčina",
       flag: "ES",
       price: 30,
+      slug: "spanielcina",
       mentors: [
         {
           fullName: "Lindsay Walton",
@@ -86,6 +82,7 @@ export default function Hero({
       title: "Taliančina",
       flag: "IT",
       price: 35,
+      slug: "taliancina",
       mentors: [
         {
           fullName: "Michael Foster",
@@ -181,42 +178,7 @@ export default function Hero({
           </div>
         </div>
         <div className="relative grid sm:grid-cols-2 lg:grid-cols-3">
-          {languages.map(({ title, flag, price, mentors }) => (
-            <Link
-              key={title}
-              href="/kurzy"
-              className="group relative p-6 py-8 border-separate border border-slate-100 transition-all hover:bg-slate-100 bg-white hover:z-10 hover:border-indigo-400 flex items-center justify-between"
-              onMouseEnter={() =>
-                setActiveHoverLanguage({ title, flag, mentors, price })
-              }
-            >
-              <div>
-                <div className="flex items-baseline gap-3">
-                  <img
-                    src={findFlagUrlByIso2Code(flag)}
-                    width={32}
-                    alt={`Vlajka - ${title}`}
-                  />
-                  <p className="text-lg font-semibold">{title}</p>
-                </div>
-                <div className="flex items-center">
-                  <p className="text-slate-800">od {price} €</p>
-                </div>
-              </div>
-              <div>
-                <div className="flex -space-x-1 overflow-hidden">
-                  {mentors.map(({ fullName, image }) => (
-                    <img
-                      key={fullName}
-                      className="inline-block h-6 w-6 rounded-full ring-2 ring-white"
-                      src={image}
-                      alt={fullName + " selfie"}
-                    />
-                  ))}
-                </div>
-              </div>
-            </Link>
-          ))}
+          <LanguageList isHero languages={languages} />
           <Link
             href="/kurzy"
             className="group p-6 py-8 border-separate border border-slate-200 bg-indigo-50 text-primary flex items-center hover:bg-indigo-100 hover:border-indigo-400"

@@ -30,7 +30,7 @@ export default function FreqQuestions({
         <div className="overflow-hidden">
           <img
             src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
-            alt="Obrázok k otázkam"
+            alt="Ukážka odpovedí na otázky našimi lektormi"
             className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-mr-32 lg:-ml-96"
             width="2432"
             height="1442"

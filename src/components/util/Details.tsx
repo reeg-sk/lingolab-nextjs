@@ -9,7 +9,7 @@ const Details = ({
 }: {
   question: string;
   answer: string;
-  isOpen: boolean;
+  isOpen?: boolean;
 }) => {
   const [opened, setOpened] = useState(isOpen);
 
