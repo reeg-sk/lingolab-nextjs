@@ -178,6 +178,7 @@ export default function Courses({
           </div>
         </div>
       </section>
+      {/* Contact form or a promo for a Lingo Lab */}
     </div>
   );
 }
