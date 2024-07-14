@@ -125,7 +125,7 @@ export default function Hero({
             Zobraziť ponuku
           </Link>
           <Link
-            href="/lektori"
+            href="/o-nas#lektori"
             className="text-slate-700 py-3 px-8 lg:px-5 border md:border-none rounded-lg hover:text-slate-900"
           >
             Vyhľadať lektora

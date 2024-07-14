@@ -12,7 +12,6 @@ export default function Header({
     { title: "Domov", url: "/" },
     { title: "Kurzy", url: "/kurzy" },
     { title: "O nás", url: "/o-nas" },
-    { title: "Cenník", url: "/cennik" },
     { title: "Blog", url: "/blog" },
     { title: "Kontakt", url: "/kontakt" },
   ],
@@ -65,7 +64,7 @@ export default function Header({
               <div>
                 <a
                   className="inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 bg-slate-600 text-white hover:bg-slate-700 -my-2.5 ml-4 transition-all lg:mr-4 xl:mr-0"
-                  href="/#https://klub.lingolab.sk/"
+                  href="https://klub.lingolab.sk/"
                   target="_blank"
                   rel="noopener"
                 >

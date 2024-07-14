@@ -26,7 +26,7 @@ export default function AboutUs({
         "https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
     },
     {
-      name: "John Doe",
+      name: "John Moe",
       role: "CEO",
       email: "john@doe.com",
       image:
@@ -127,7 +127,7 @@ export default function AboutUs({
         className="relative container mx-auto max-w-7xl flex justify-center flex-col mt-12 md:mt-24"
       >
         <h2 className="text-3xl mb-8 font-bold text-balance">
-          Úžastní mentori
+          Úžastní lektori
         </h2>
         <div className="grid lg:grid-cols-3 gap-4">
           {members.map((person) => (
