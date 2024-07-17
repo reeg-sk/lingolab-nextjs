@@ -1,7 +1,11 @@
 import StyleIndex from "@/components/graphics/StyleIndex";
+import ClubCard from "@/components/util/ClubCard";
 import CourseListing from "@/components/util/CourseListing";
+import Details from "@/components/util/Details";
 import LectureOffer from "@/components/util/LectureOffer";
+import { IconZoomQuestion } from "@tabler/icons-react";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Kurzy – LingoLab",
@@ -156,6 +160,28 @@ export default function Courses({
       },
     ],
   },
+  faq = [
+    {
+      question: "Ako sa môžem prihlásiť na kurz?",
+      answer:
+        'Prihlásiť sa môžete jednoducho cez našu webovú stránku. Vyberte si kurz, ktorý vás zaujíma a kliknite na tlačidlo "Prihlásiť sa".',
+    },
+    {
+      question: "Koľko trvá jeden kurz?",
+      answer:
+        "Čas trvania kurzu závisí od jeho náročnosti a vašich cieľov. V priemere trvá jeden kurz 3 mesiace.",
+    },
+    {
+      question: "Koľko stojí jeden kurz?",
+      answer:
+        "Cena kurzu závisí od jeho náročnosti a jazyka, ktorý sa učíte. Priemerná cena kurzu je 20 € za hodinu.",
+    },
+    {
+      question: "Koľko lektorov máte?",
+      answer:
+        "V našej jazykovej škole máme viac ako 10 lektorov, ktorí vám radi pomôžu s výberom kurzu a úrovne.",
+    },
+  ],
 }) {
   return (
     <div className="px-4">
@@ -170,18 +196,62 @@ export default function Courses({
           </h1>
         </div>
 
-        <div className="relative grid lg:lg:grid-cols-[minmax(640px,_1fr)_minmax(480px,520px)] gap-x-4">
+        <div className="relative grid lg:lg:grid-cols-[minmax(540px,_1fr)_minmax(480px,520px)] gap-x-4">
           <div className="md:mb-12">
             <CourseListing course={courses} />
             <CourseListing course={preps} />
             <CourseListing course={groups} />
           </div>
           <div className="relative h-[calc(100%-6rem)]">
-            <LectureOffer className="sticky md:top-36 md:mt-12 p-8 bg-slate-100 rounded-lg" />
+            <div className="sticky md:top-36 md:mt-12">
+              <LectureOffer className="p-8 bg-slate-100 rounded-lg" />
+              <Link
+                href="#faq"
+                className="group flex items-center gap-2 w-full mt-2 p-4 px-8 text-slate-700 border border-slate-300 rounded-lg hover:bg-slate-50 transition-all"
+              >
+                <IconZoomQuestion
+                  size={20}
+                  className="group-hover:-rotate-180 transition-transform delay-75"
+                />
+                Často kladené otázky
+              </Link>
+            </div>
           </div>
         </div>
       </section>
-      {/* Contact form or a promo for a Lingo Lab */}
+      <ClubCard />
+      <section
+        id="faq"
+        className="relative container mx-auto max-w-7xl flex justify-center flex-col mb-24 pt-24"
+      >
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center">
+            Často kladené otázky
+          </h2>
+        </div>
+        <div className="grid md:  grid-cols-2 gap-4">
+          <div>
+            {faq.map(({ question, answer }, id) => (
+              <Details
+                key={question}
+                isOpen={id === 0}
+                question={question}
+                answer={answer}
+              />
+            ))}
+          </div>
+          <div>
+          {faq.splice(0, 5).map(({ question, answer }, id) => (
+              <Details
+                key={question}
+                isOpen={id === 0}
+                question={question}
+                answer={answer}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

@@ -101,7 +101,7 @@ export default function Hero({
       id="hero"
       className="relative min-h-screen container mx-auto max-w-7xl flex justify-center flex-col"
     >
-      <HeroVideo src="/videos/promo-video.mp4" />
+      {/* <HeroVideo src="/videos/promo-video.mp4" /> */}
       <div className="mt-12 mb-16 lg:mb-32 m-4">
         <h1 className="text-3xl mb-12 font-extrabold sm:text-5xl sm:leading-[3.5rem] text-balance">
           Naučíme vás{" "}

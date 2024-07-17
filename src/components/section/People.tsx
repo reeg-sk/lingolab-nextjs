@@ -46,8 +46,8 @@ export default function People({
   return (
     <section id="lektori">
       <div className="relative mx-auto grid max-w-2xl lg:max-w-7xl gap-x-8 gap-y-10 md:gap-y-20 px-4 pb-24">
-        <div className="max-w-2xl">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <div className="w-full xl:col-span-2">
+          <h2 className="text-3xl sm:text-center font-bold tracking-tight text-gray-900 sm:text-4xl">
             Lektori, ktorých sa oplatí spoznať
           </h2>
         </div>
@@ -61,7 +61,7 @@ export default function People({
             </li>
           ))}
         </ul>
-        <div className="flex flex-col md:flex-row items-center gap-x-6 gap-y-2">
+        <div className="flex flex-col md:flex-row  justify-center items-center gap-x-6 gap-y-2 xl:col-span-2">
           <a
             href="/lektori"
             className="group w-full transition-all md:w-fit flex gap-2 items-center rounded-md border border-primary text-primary py-3 px-8 lg:px-5 text-sm font-semibold shadow-sm hover:bg-indigo-50"

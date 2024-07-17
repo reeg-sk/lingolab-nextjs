@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
 const Details = ({
@@ -22,7 +22,7 @@ const Details = ({
       <button
         type="button"
         onClick={toggleOpened}
-        className="group w-full flex justify-between items-baseline border-t pt-4 text-lg font-semibold mb-2 text-left"
+        className={`group w-full flex justify-between items-baseline ${!isOpen ? 'border-t' : ''} pt-4 text-lg font-semibold mb-2 text-left`}
       >
         {question}
         <span className="flex items-center h-7 ml-7">
@@ -45,11 +45,19 @@ const Details = ({
           </svg>
         </span>
       </button>
-      {opened && (
-        <motion.p className="text-gray-600 transition-all overflow-hidden">
-          {answer}
-        </motion.p>
-      )}
+      <AnimatePresence mode="sync">
+        {opened && (
+          <motion.p
+          initial={{ height: 0 }}
+          animate={{ height: "fit-content" }}
+          exit={{ height: 0 }}
+          transition={{duration: 0.3, type: "spring"}}
+            className="text-gray-600 overflow-hidden"
+          >
+            {answer}
+          </motion.p>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
