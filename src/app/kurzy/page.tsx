@@ -207,13 +207,14 @@ export default function Courses({
               <LectureOffer className="p-8 bg-slate-100 rounded-lg" />
               <Link
                 href="#faq"
-                className="group flex items-center gap-2 w-full mt-2 p-4 px-8 text-slate-700 border border-slate-300 rounded-lg hover:bg-slate-50 transition-all"
+                className="group hidden lg:flex items-center gap-2 w-full mt-2 p-4 px-8 text-slate-700 border border-slate-300 rounded-lg hover:bg-slate-50 transition-all"
               >
                 <IconZoomQuestion
                   size={20}
                   className="group-hover:-rotate-180 transition-transform delay-75"
                 />
                 Často kladené otázky
+
               </Link>
             </div>
           </div>
@@ -222,14 +223,14 @@ export default function Courses({
       <ClubCard />
       <section
         id="faq"
-        className="relative container mx-auto max-w-7xl flex justify-center flex-col mb-24 pt-24"
+        className="relative container mx-auto max-w-7xl flex justify-center flex-col mb-24 pt-32"
       >
         <div className="mb-8">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center">
             Často kladené otázky
           </h2>
         </div>
-        <div className="grid md:  grid-cols-2 gap-4">
+        <div className="grid lg:grid-cols-2 gap-4">
           <div>
             {faq.map(({ question, answer }, id) => (
               <Details

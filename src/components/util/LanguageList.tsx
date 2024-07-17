@@ -56,7 +56,7 @@ export default function LanguageList({
           </div>
           {!isHero && (
             <div className="hidden md:block justify-self-end">
-              <p className="p-2 px-4 flex gap-2 items-center border border-primary rounded-lg text-primary hover:bg-indigo-100">
+              <p className="p-2 px-4 flex gap-2 items-center border border-primary rounded-lg text-primary group-hover:bg-indigo-100">
                 <IconCalendarCheck />
                 Rezervovať
               </p>

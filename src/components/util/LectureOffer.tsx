@@ -25,7 +25,7 @@ export default function LectureOffer({
       </p>
       <div className="mt-10 flex flex-col md:flex-row items-center gap-x-6 gap-y-2">
         <Link
-          href="/rezervacia-hodiny"
+          href="/hodina-zdarma"
           className="w-full transition-all md:w-fit flex gap-2 items-center rounded-md border border-primary text-primary py-3 px-8 lg:px-5 text-sm font-semibold shadow-sm hover:bg-indigo-50"
         >
           <IconCalendarFilled />
@@ -37,7 +37,7 @@ export default function LectureOffer({
         </Link>
         {isHero && (
           <Link
-            href="/rezervacia-hodiny#faq"
+            href="/hodina-zdarma#faq"
             className="w-full md:w-fit group text-sm font-semibold leading-6 border border-slate-500 py-3 px-8 lg:px-5 md:border-none rounded-lg text-slate-700 hover:text-slate-900"
           >
             Viac informácií
