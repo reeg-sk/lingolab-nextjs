@@ -53,18 +53,6 @@ export default function AboutUs({
         "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80",
     },
   ],
-}: {
-  foundingMembers: {
-    name: string;
-    role: string;
-    image: string;
-    email?: string;
-  }[];
-  members: {
-    name: string;
-    teaching: { flag: string; language: string };
-    image: string;
-  }[];
 }) {
   return (
     <div className="px-4 mb-24">
