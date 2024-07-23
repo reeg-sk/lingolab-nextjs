@@ -9,22 +9,22 @@ export const metadata: Metadata = {
 };
 
 export default function Contact({
-  contactMethods = [
-    {
-      Icon: IconMapPins,
-      content: "Hlavná 3, 072 31 Košice",
-    },
-    {
-      Icon: IconPhone,
-      content: "(+421) 907 123 456",
-      url: "tel:+421907123456",
-    },
-    {
-      Icon: IconRecordMail,
-      content: "ahoj@lingolab.sk",
-      url: "mailto:ahoj@lingolab.sk",
-    },
-  ],
+  // contactMethods = [
+  //   {
+  //     Icon: IconMapPins,
+  //     content: "Hlavná 3, 072 31 Košice",
+  //   },
+  //   {
+  //     Icon: IconPhone,
+  //     content: "(+421) 907 123 456",
+  //     url: "tel:+421907123456",
+  //   },
+  //   {
+  //     Icon: IconRecordMail,
+  //     content: "ahoj@lingolab.sk",
+  //     url: "mailto:ahoj@lingolab.sk",
+  //   },
+  // ],
 }) {
   return (
     <div className="px-4 mb-24">
@@ -39,7 +39,7 @@ export default function Contact({
         <div className="grid lg:grid-cols-2 gap-4">
           <div>
             <div className="flex flex-col gap-6">
-              {contactMethods.map(({ Icon, content, url }, index) => (
+              {/* {contactMethods.map(({ Icon, content, url }, index) => (
                 <div key={index} className="flex items-center gap-4">
                   <div className="p-4 rounded bg-primary/5 text-primary">
                     <Icon size={32} />
@@ -52,7 +52,7 @@ export default function Contact({
                     <p>{content}</p>
                   )}
                 </div>
-              ))}
+              ))} */}
             </div>
             <div className="rounded mt-8 pt-4 w-fit border-t">
               <Socials longName />
