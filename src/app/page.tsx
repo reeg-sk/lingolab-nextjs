@@ -5,7 +5,6 @@ import Hero from "@/components/section/Hero";
 import People from "@/components/section/People";
 import Pros from "@/components/section/Pros";
 import Reviews from "@/components/section/Reviews";
-import Image from "next/image";
 
 export default function Home() {
   return (
