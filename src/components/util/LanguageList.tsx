@@ -14,9 +14,9 @@ export default function LanguageList({
 }) {
   return (
     <>
-      {languages.map(({ code, name, type, slug, online, lecturers }) => (
+      {languages.map(({ code, name, slug, type, online, lecturers }) => (
         <Link
-          key={slug}
+          key={`${slug}-${type}`}
           href={`/kurzy/${slug}`}
           className={`group relative p-6 py-8 border-separate border border-slate-100 transition-all hover:bg-slate-100 bg-white hover:z-10 hover:border-indigo-400 grid grid-cols-2 ${
             !isHero ? "md:grid-cols-3" : ""
@@ -47,7 +47,10 @@ export default function LanguageList({
                 <img
                   key={name}
                   className="inline-block h-6 w-6 rounded-full ring-2 ring-white"
-                  src={avatar || `https://ui-avatars.com/api/?name=${name}&background=random`}
+                  src={
+                    avatar ||
+                    `https://ui-avatars.com/api/?name=${name}&background=random`
+                  }
                   alt={name + " profilová fotka"}
                 />
               ))}

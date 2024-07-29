@@ -35,6 +35,7 @@ export default async function Courses() {
             {[...new Set(languages.map((language) => language.type))].map(
               (type) => (
                 <CourseListing
+                  key={type}
                   title={type}
                   courses={languages.filter(
                     (language) => language.type === type
@@ -78,9 +79,11 @@ export default async function Courses() {
               ))}
             </div>
             <div>
-              {questions.splice(questions.length / 2 -1).map(({ q, a }, id) => (
-                <Details key={q} isOpen={id === 0} question={q} answer={a} />
-              ))}
+              {questions
+                .splice(questions.length / 2 - 1)
+                .map(({ q, a }, id) => (
+                  <Details key={q} isOpen={id === 0} question={q} answer={a} />
+                ))}
             </div>
           </div>
         </section>
