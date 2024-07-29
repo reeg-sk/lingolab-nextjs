@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 
 export default async function Courses() {
   const languages = await getLanguages();
+  // @ts-ignore - questions is not defined?
   const { questions } = await getCoursesFaq();
 
   return (
