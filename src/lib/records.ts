@@ -37,6 +37,8 @@ async function getLecturers() {
 async function getLanguages(limit = 100) {
   return directus.request(readItems("languages", {
     limit,
+    // deep: { lecturers: { _limit: 3 } },
+    // TODO: Figure out how to max 3 lecturers per language 
   }));
 }
 
