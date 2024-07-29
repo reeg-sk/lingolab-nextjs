@@ -37,6 +37,7 @@ export default function LanguageList({
               <p className="text-lg font-semibold">{name}</p>
             </div>
             <div className="flex items-center">
+              {JSON.stringify(lecturers)}
               <p className="text-slate-800">od {online} €</p>
             </div>
           </div>
