@@ -14,9 +14,9 @@ export default function LanguageList({
 }) {
   return (
     <>
-      {languages.map(({ code, name, slug, type, online, lecturers }) => (
+      {languages.map(({ code, name, slug, type, online, lecturers }, idx) => (
         <Link
-          key={`${slug}-${type}`}
+          key={`${slug}-${type}-${idx}`}
           href={`/kurzy/${slug}`}
           className={`group relative p-6 py-8 border-separate border border-slate-100 transition-all hover:bg-slate-100 bg-white hover:z-10 hover:border-indigo-400 grid grid-cols-2 ${
             !isHero ? "md:grid-cols-3" : ""
