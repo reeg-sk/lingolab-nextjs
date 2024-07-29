@@ -1,16 +1,16 @@
-import { readItem, readItems } from "@directus/sdk";
+import { readItem, readItems, readSingleton } from "@directus/sdk";
 import directus from "./directus";
 
 async function getGlobals() {
-  return directus.request(readItem("globals", 1));
+  return directus.request(readSingleton("globals"));
 }
 
 async function getSocials() {
-  return directus.request(readItem("socials", 1));
+  return directus.request(readSingleton("socials"));
 }
 
 async function getFaq() {
-  return directus.request(readItem("faq", 1));
+  return directus.request(readSingleton("faq"));
 }
 
 async function getReviews() {
@@ -45,7 +45,13 @@ async function getLanguages(limit = 100) {
         "inperson",
         "name",
         "code",
-        { lecturers: [".*"] },
+        {
+          lecturers: [
+            {
+              lecturers_id: ["name", "avatar", "slug"],
+            }
+          ],
+        }
       ],
       deep: { lecturers: { _limit: 3 } },
     })

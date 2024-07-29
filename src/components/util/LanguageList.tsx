@@ -37,22 +37,21 @@ export default function LanguageList({
               <p className="text-lg font-semibold">{name}</p>
             </div>
             <div className="flex items-center">
-              {JSON.stringify(lecturers)}
               <p className="text-slate-800">od {online} €</p>
             </div>
           </div>
 
           <div className="justify-self-end">
             <div className="flex -space-x-1 overflow-hidden">
-              {lecturers.map(({ name, avatar }) => (
+              {lecturers.map(({ lecturers_id }) => (
                 <img
-                  key={name}
+                  key={lecturers_id.name}
                   className="inline-block h-6 w-6 rounded-full ring-2 ring-white"
                   src={
-                    avatar ||
-                    `https://ui-avatars.com/api/?name=${name}&background=random`
+                    lecturers_id.avatar ||
+                    `https://ui-avatars.com/api/?name=${lecturers_id.name}&background=random`
                   }
-                  alt={name + " profilová fotka"}
+                  alt={lecturers_id.name + " profilová fotka"}
                 />
               ))}
             </div>
