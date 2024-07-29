@@ -1,48 +1,11 @@
-import { findFlagUrlByIso2Code } from "country-flags-svg";
 import StylePeople from "../graphics/StylePeople";
 import { IconUserCheck } from "@tabler/icons-react";
 import PersonLink from "../util/PersonLink";
+import { getLecturers } from "@/lib/records";
 
-export default function People({
-  people = [
-    {
-      name: "Leslie Alexander",
-      teaching: { flag: "GB", language: "Angličtina" },
-      image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    },
-    {
-      name: "Michael Foster",
-      teaching: { flag: "GB", language: "Angličtina" },
-      image:
-        "https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    },
-    {
-      name: "Dries Vincent",
-      teaching: { flag: "GB", language: "Angličtina" },
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80",
-    },
-    {
-      name: "Lindsay Walton",
-      teaching: { flag: "GB", language: "Angličtina" },
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    },
-    {
-      name: "Courtney Henry",
-      teaching: { flag: "DE", language: "Nemčina" },
-      image:
-        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    },
-    {
-      name: "Tom Cook",
-      teaching: { flag: "DE", language: "Nemčina" },
-      image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    },
-  ],
-}) {
+export default async function People() {
+  const people = await getLecturers();
+
   return (
     <section id="lektori">
       <div className="relative mx-auto grid max-w-2xl lg:max-w-7xl gap-x-8 gap-y-10 md:gap-y-20 px-4 pb-24">
@@ -55,6 +18,7 @@ export default function People({
           role="list"
           className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 sm:gap-y-16 xl:col-span-2"
         >
+
           {people.map(person => (
             <li key={person.name}>
               <PersonLink person={person} />

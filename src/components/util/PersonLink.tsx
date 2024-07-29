@@ -3,13 +3,6 @@ import Link from "next/link";
 
 export default function PersonLink({
   person,
-}: {
-  person: {
-    name: string;
-    teaching: { flag: string; language: string };
-    image: string;
-    slug?: string;
-  };
 }) {
   return (
     <Link
@@ -18,7 +11,7 @@ export default function PersonLink({
     >
       <img
         className="h-16 w-16 md:h-24 md:w-24 rounded-full border-2 border-transparent group-hover:border-primary group-hover:transform group-hover:scale-105 transition-all duration-300"
-        src={person.image}
+        src={person.avatar || `https://ui-avatars.com/api/?name=${person.name}&background=random`}
         alt={person.name + " selfie"}
       />
       <div>
@@ -27,11 +20,11 @@ export default function PersonLink({
         </h3>
         <div className="flex gap-2 text-base leading-6 text-slate-700">
           <img
-            src={findFlagUrlByIso2Code(person.teaching.flag)}
+            src={findFlagUrlByIso2Code(person.languagecode)}
             width={24}
-            alt={`Doučuje jazyk - ${person.teaching.language}`}
+            alt={`Doučuje jazyk - ${person.language}`}
           />
-          <p>{person.teaching.language}</p>
+          <p>{person.language}</p>
         </div>
       </div>
       <p

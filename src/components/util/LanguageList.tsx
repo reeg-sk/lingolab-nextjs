@@ -1,7 +1,6 @@
 "use client";
 import { findFlagUrlByIso2Code } from "country-flags-svg";
 import Link from "next/link";
-import { Language } from "../interfaces";
 import { IconCalendarCheck } from "@tabler/icons-react";
 
 export default function LanguageList({
@@ -9,47 +8,47 @@ export default function LanguageList({
   isHero = false,
   setActiveHoverLanguage,
 }: {
-  languages: Language[];
+  languages: any[];
   isHero?: boolean;
   setActiveHoverLanguage?: any;
 }) {
   return (
     <>
-      {languages.map(({ title, flag, price, slug, mentors }) => (
+      {languages.map(({ code, name, type, slug, online, lecturers }) => (
         <Link
-          key={title}
+          key={slug}
           href={`/kurzy/${slug}`}
           className={`group relative p-6 py-8 border-separate border border-slate-100 transition-all hover:bg-slate-100 bg-white hover:z-10 hover:border-indigo-400 grid grid-cols-2 ${
             !isHero ? "md:grid-cols-3" : ""
           } items-center md:justify-start`}
           onMouseEnter={() =>
             setActiveHoverLanguage
-              ? setActiveHoverLanguage({ title, flag, mentors, price })
+              ? setActiveHoverLanguage({ code, name, lecturers, online })
               : null
           }
         >
           <div>
             <div className="flex items-baseline gap-3">
               <img
-                src={findFlagUrlByIso2Code(flag)}
+                src={findFlagUrlByIso2Code(code)}
                 width={32}
-                alt={`Kurz ${title}`}
+                alt={`Kurz ${name}`}
               />
-              <p className="text-lg font-semibold">{title}</p>
+              <p className="text-lg font-semibold">{name}</p>
             </div>
             <div className="flex items-center">
-              <p className="text-slate-800">od {price} €</p>
+              <p className="text-slate-800">od {online} €</p>
             </div>
           </div>
 
           <div className="justify-self-end">
             <div className="flex -space-x-1 overflow-hidden">
-              {mentors.map(({ fullName, image }) => (
+              {lecturers.map(({ name, avatar }) => (
                 <img
-                  key={fullName}
+                  key={name}
                   className="inline-block h-6 w-6 rounded-full ring-2 ring-white"
-                  src={image}
-                  alt={fullName + " profilová fotka"}
+                  src={avatar || `https://ui-avatars.com/api/?name=${name}&background=random`}
+                  alt={name + " profilová fotka"}
                 />
               ))}
             </div>

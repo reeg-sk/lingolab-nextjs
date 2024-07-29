@@ -10,5 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 1 - i * 0.1,
   }));
 
+  // load all languages and add them to the sitemap
+
   return [...routes];
 }

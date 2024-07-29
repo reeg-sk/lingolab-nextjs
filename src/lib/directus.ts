@@ -5,4 +5,5 @@ const directus = createDirectus(
 ).with(staticToken(process.env.BACKEND_TOKEN || ""))
 .with(rest());
 
+
 export default directus;

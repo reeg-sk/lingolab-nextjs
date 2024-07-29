@@ -4,97 +4,12 @@ import { useState } from "react";
 import { findFlagUrlByIso2Code } from "country-flags-svg";
 import Link from "next/link";
 
-import HeroVideo from "../util/HeroVideo";
 import { AnimatePresence, motion } from "framer-motion";
-import { Language } from "../interfaces";
 import LanguageList from "../util/LanguageList";
 
-export default function Hero({
-  languages = [
-    {
-      title: "Angličtina",
-      flag: "GB",
-      price: 15,
-      slug: "anglictina",
-      mentors: [
-        {
-          fullName: "Leslie Alexander",
-          image:
-            "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-        },
-        {
-          fullName: "Michael Foster",
-          image:
-            "https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-        },
-        {
-          fullName: "Dries Vincent",
-          image:
-            "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80",
-        },
-        {
-          fullName: "Lindsay Walton",
-          image:
-            "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-        },
-      ],
-    },
-    {
-      title: "Nemčina",
-      flag: "DE",
-      price: 20,
-      slug: "nemcina",
-      mentors: [
-        {
-          fullName: "Courtney Henry",
-          image:
-            "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-        },
-      ],
-    },
-    {
-      title: "Francúzština",
-      flag: "FR",
-      price: 25,
-      slug: "francuzstina",
-      mentors: [
-        {
-          fullName: "Dries Vincent",
-          image:
-            "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80",
-        },
-      ],
-    },
-    {
-      title: "Španielčina",
-      flag: "ES",
-      price: 30,
-      slug: "spanielcina",
-      mentors: [
-        {
-          fullName: "Lindsay Walton",
-          image:
-            "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-        },
-      ],
-    },
-    {
-      title: "Taliančina",
-      flag: "IT",
-      price: 35,
-      slug: "taliancina",
-      mentors: [
-        {
-          fullName: "Michael Foster",
-          image:
-            "https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-        },
-      ],
-    },
-  ],
-}) {
+export default function Hero({ languages }) {
   const [activeHoverLanguage, setActiveHoverLanguage] =
-    useState<Language | null>(null);
+    useState<any>(null);
 
   return (
     <section
@@ -161,16 +76,16 @@ export default function Hero({
                       rotate: [0, 10, -10, 10, -10, 0],
                     }}
                     exit={{ opacity: 0 }}
-                    src={findFlagUrlByIso2Code(activeHoverLanguage?.flag)}
+                    src={findFlagUrlByIso2Code(activeHoverLanguage?.code)}
                     width={24}
-                    alt={`Kurz pre jazyk ${activeHoverLanguage?.title}`}
+                    alt={`Kurz pre jazyk ${activeHoverLanguage?.name}`}
                   />
                   <span className="text-slate-700">
-                    {activeHoverLanguage?.title}
+                    {activeHoverLanguage?.name}
                   </span>
                   <span>
-                    – {activeHoverLanguage?.mentors.length} lektor
-                    {activeHoverLanguage?.mentors.length > 1 ? "i" : ""}
+                    – {activeHoverLanguage?.lecturers.length} lektor
+                    {activeHoverLanguage?.lecturers.length > 1 ? "i" : ""}
                   </span>
                 </motion.div>
               )}
@@ -178,7 +93,11 @@ export default function Hero({
           </div>
         </div>
         <div className="relative grid sm:grid-cols-2 lg:grid-cols-3">
-          <LanguageList isHero languages={languages} setActiveHoverLanguage={setActiveHoverLanguage} />
+          <LanguageList
+            isHero
+            languages={languages}
+            setActiveHoverLanguage={setActiveHoverLanguage}
+          />
           <Link
             href="/kurzy"
             className="group p-6 py-8 border-separate border border-slate-200 bg-indigo-50 text-primary flex items-center hover:bg-indigo-100 hover:border-indigo-400"

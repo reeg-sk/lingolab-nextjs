@@ -2,32 +2,12 @@ import Link from "next/link";
 import StyleFooter from "../graphics/StyleFooter";
 import Newsletter from "./Newsletter";
 import Socials from "./Socials";
+import { getGlobals } from "@/lib/records";
 
-export default function Footer({
-  footerLinks = [
-    {
-      title: "Všeobecné obchodné podmienky",
-      url: "/legal/vseobecne-obchodne-podmienky",
-    },
-    { title: "Ochrana osobných údajov", url: "/legal/ochrana-osobnych udajov" },
-  ],
-  companyData = {
-    name: "Lingolab s. r. o.",
-    address: "Hlavná 3, 072 31 Košice",
-    addressFounding: "Jahodová 13, 071 01 Michalovce",
-    ico: "2909400990",
-    icdph: "2909400990",
-  },
-}: {
-  footerLinks?: { title: string; url: string }[];
-  companyData?: {
-    name: string;
-    address: string;
-    addressFounding: string;
-    ico: string;
-    icdph: string;
-  };
-}) {
+
+export default async function Footer() {
+  const { footerLinks, name, address, addressFounding, ico, icdph } = await getGlobals();
+
   return (
     <footer className="relative isolate overflow-hidden bg-gray-800 py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-2xl lg:max-w-7xl px-6 lg:px-8">
@@ -35,18 +15,18 @@ export default function Footer({
           <Newsletter />
           <div className="text-white w-full lg:w-fit max-w-xl lg:max-w-lg">
             <div>
-              <p>{companyData.name}</p>
-              <p>{companyData.address}</p>
+              <p>{name}</p>
+              <p>{address}</p>
               <p className="text-sm text-slate-200">
-                {companyData.addressFounding}
+                {addressFounding}
               </p>
               <p className="mt-2">
                 <span className="text-sm text-slate-300">IČO</span>{" "}
-                {companyData.ico}
+                {ico}
               </p>
               <p>
                 <span className="text-sm text-slate-300">IČ DPH</span>{" "}
-                {companyData.icdph}
+                {icdph}
               </p>
             </div>
             {footerLinks.map(({ title, url }) => (
