@@ -51,7 +51,7 @@ export default function Hero({ languages }) {
       <div className="relative">
         <div className="flex justify-between items-center m-4">
           <h2 className="md:text-2xl text-balance">
-            Ponúkame viac, ako <span className="text-primary">10 jazykov</span>
+            Ponúkame viac, ako <span className="text-primary">{Math.ceil(languages?.length / 5) * 5} jazykov</span>
           </h2>
           <div className="hidden sm:block">
             <AnimatePresence>
