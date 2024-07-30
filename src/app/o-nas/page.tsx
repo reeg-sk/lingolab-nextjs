@@ -95,12 +95,12 @@ export default async function AboutUs({
       </section>
       <section
         id="lektori"
-        className="relative container mx-auto max-w-7xl flex justify-center flex-col mt-12 md:mt-24"
+        className="relative container mx-auto max-w-7xl flex justify-center flex-col pt-12 md:pt-24"
       >
         <h2 className="text-3xl mb-8 font-bold text-balance">
           Úžastní lektori
         </h2>
-        <div className="grid lg:grid-cols-3 gap-4">
+        <div className="grid lg:grid-cols-3 gap-x-8 gap-y-12">
           {members.map((person) => (
             <PersonLink key={person.name} person={person} />
           ))}

@@ -23,10 +23,10 @@ async function getReviews() {
   );
 }
 
-async function getLecturers() {
+async function getLecturers(limit = 6) {
   return directus.request(
     readItems("lecturers", {
-      limit: 6,
+      limit: Number(limit),
       status: "published",
       sort: ["-date_created"],
       fields: ["name", "avatar", "language", "languagecode", "slug"],

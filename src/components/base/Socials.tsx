@@ -32,7 +32,7 @@ export default async function Socials({
   ];
 
   return (
-    <div className="flex md:gap-3 items-center">
+    <div className="flex md:gap-3 justify-evenly items-center">
       {socials.map(({ name, Icon, link }) => (
         <a
           key={name}
