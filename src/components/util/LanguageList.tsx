@@ -48,7 +48,7 @@ export default function LanguageList({
                   key={lecturers_id.name}
                   className="inline-block h-6 w-6 rounded-full ring-2 ring-white"
                   src={
-                    lecturers_id.avatar ||
+                    `/files/${lecturers_id.avatar}` ||
                     `https://ui-avatars.com/api/?name=${lecturers_id.name}&background=random`
                   }
                   alt={lecturers_id.name + " profilová fotka"}

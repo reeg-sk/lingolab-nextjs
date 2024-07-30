@@ -34,6 +34,12 @@ async function getLecturers(limit = 6) {
   );
 }
 
+async function getFoundingMembers() {
+  return directus.request(
+    readItems("foundingMembers")
+  );
+}
+
 async function getLanguages(limit = 100) {
   return directus.request(
     readItems("languages", {
@@ -80,4 +86,5 @@ export {
   getLanguages,
   getCoursesFaq,
   getLatestPosts,
+  getFoundingMembers,
 };

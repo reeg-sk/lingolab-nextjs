@@ -5,7 +5,7 @@ export default function Review({ avatar, name, stars, date_created, content }) {
     <>
       <div className="flex items-center mb-4">
         <img
-          src={avatar || `https://ui-avatars.com/api/?name=${name}&background=random`}
+          src={`/files/${avatar}` || `https://ui-avatars.com/api/?name=${name}&background=random`}
           alt="Avatar"
           className="w-12 h-12 rounded-full mr-4"
         />
