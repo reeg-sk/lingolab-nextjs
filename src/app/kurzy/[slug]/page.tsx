@@ -18,6 +18,7 @@ async function getPage(slug) {
   }
 }
 
+// TODO - https://nextjs.org/docs/app/building-your-application/optimizing/metadata#dynamic-image-generation in the future
 export async function generateMetadata(
   { params }
 ) { 
