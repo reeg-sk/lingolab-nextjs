@@ -14,6 +14,7 @@ export default function PersonLink({ person }) {
             ? `/files/${person.avatar}`
             : `https://ui-avatars.com/api/?name=${person.name}&background=random`
         }
+        loading="lazy"
         alt={person.name + " selfie"}
       />
       <div>

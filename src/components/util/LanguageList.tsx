@@ -52,6 +52,7 @@ export default function LanguageList({
                       ? `/files/${lecturers_id.avatar}`
                       : `https://ui-avatars.com/api/?name=${lecturers_id.name}&background=random`
                   }
+                  loading="lazy"
                   alt={lecturers_id.name + " profilová fotka"}
                 />
               ))}

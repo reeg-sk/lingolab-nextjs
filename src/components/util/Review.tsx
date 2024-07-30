@@ -10,6 +10,7 @@ export default function Review({ avatar, name, stars, date_created, content }) {
               ? `/files/${avatar}`
               : `https://ui-avatars.com/api/?name=${name}&background=random`
           }
+          loading="lazy"
           alt="Avatar"
           className="w-12 h-12 rounded-full mr-4"
         />
