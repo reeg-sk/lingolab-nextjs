@@ -5,7 +5,7 @@ import {
   IconBrandX,
 } from "@tabler/icons-react";
 
-
+// TODO - Fix socials
 export default async function Socials({
   longName = false,
 }: {
@@ -32,7 +32,7 @@ export default async function Socials({
   ];
 
   return (
-    <div className="flex gap-3 items-center">
+    <div className="flex md:gap-3 items-center">
       {socials.map(({ name, Icon, link }) => (
         <a
           key={name}
@@ -44,7 +44,7 @@ export default async function Socials({
           title={name}
         >
           <Icon />
-          {longName && <span>{name}</span>}
+          {longName && <span className="hidden md:block">{name}</span>}
         </a>
       ))}
     </div>

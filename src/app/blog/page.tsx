@@ -31,7 +31,7 @@ export default async function Blog() {
             </div>
             <div className="flex gap-6 lg:gap-12 justify-start md:px-4">
               <div className="grid gap-2 items-center">
-                <p>{post.date_created}</p>
+                <p>{new Intl.DateTimeFormat("sk").format(new Date(post.date_created))}</p>
               </div>
             </div>
           </Link>
