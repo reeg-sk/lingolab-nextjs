@@ -1,6 +1,4 @@
-"use client";
 import { IconMail } from "@tabler/icons-react";
-import { motion } from "framer-motion";
 import { getImageUrl } from "@/data/siteMetadata";
 
 export default function PersonFoundingLink({ person }) {
@@ -17,23 +15,13 @@ export default function PersonFoundingLink({ person }) {
         </h4>
         <p className="text-primary">{person.role}</p>
       </div>
-      <motion.a
-        animate={{
-          rotate: [0, 20, 0, 10, 0],
-        }}
-        transition={{
-          duration: 2,
-          ease: "easeInOut",
-          times: [0, 0.2, 0.5, 0.8, 1],
-          repeat: Infinity,
-          repeatDelay: 1,
-        }}
+      <a
         href={`mailto:${person.email}`}
         className="flex w-12 h-12 rounded-full justify-center items-center hover:bg-slate-200/80 bg-slate-100 transition-all ml-auto mr-4"
         aria-hidden="true"
       >
         <IconMail className="text-slate-400" />
-      </motion.a>
+      </a>
     </div>
   );
 }
