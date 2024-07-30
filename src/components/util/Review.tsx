@@ -1,15 +1,12 @@
 import { IconStarFilled } from "@tabler/icons-react";
+import assetUrl, { getImageUrl } from "@/data/siteMetadata";
 
 export default function Review({ avatar, name, stars, date_created, content }) {
   return (
     <>
       <div className="flex items-center mb-4">
         <img
-          src={
-            avatar
-              ? `/files/${avatar}`
-              : `https://ui-avatars.com/api/?name=${name}&background=random`
-          }
+          src={getImageUrl(avatar, name)}
           loading="lazy"
           alt="Avatar"
           className="w-12 h-12 rounded-full mr-4"

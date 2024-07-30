@@ -1,4 +1,5 @@
 import { findFlagUrlByIso2Code } from "country-flags-svg";
+import assetUrl, { getImageUrl } from "@/data/siteMetadata";
 import Link from "next/link";
 
 export default function PersonLink({ person }) {
@@ -9,11 +10,7 @@ export default function PersonLink({ person }) {
     >
       <img
         className="h-16 w-16 md:h-24 md:w-24 rounded-full border-2 border-transparent group-hover:border-primary group-hover:transform group-hover:scale-105 transition-all duration-300"
-        src={
-          person.avatar
-            ? `/files/${person.avatar}`
-            : `https://ui-avatars.com/api/?name=${person.name}&background=random`
-        }
+        src={getImageUrl(person.avatar, person.name)}
         loading="lazy"
         alt={person.name + " selfie"}
       />

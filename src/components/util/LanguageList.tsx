@@ -2,6 +2,7 @@
 import { findFlagUrlByIso2Code } from "country-flags-svg";
 import Link from "next/link";
 import { IconCalendarCheck } from "@tabler/icons-react";
+import { getImageUrl } from "@/data/siteMetadata";
 
 export default function LanguageList({
   languages = [],
@@ -47,11 +48,7 @@ export default function LanguageList({
                 <img
                   key={lecturers_id.name}
                   className="inline-block h-6 w-6 rounded-full ring-2 ring-white"
-                  src={
-                    lecturers_id.avatar
-                      ? `/files/${lecturers_id.avatar}`
-                      : `https://ui-avatars.com/api/?name=${lecturers_id.name}&background=random`
-                  }
+                  src={getImageUrl(lecturers_id.avatar, lecturers_id.name)}
                   loading="lazy"
                   alt={lecturers_id.name + " profilová fotka"}
                 />

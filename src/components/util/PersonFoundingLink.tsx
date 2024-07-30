@@ -1,16 +1,13 @@
 "use client";
 import { IconMail } from "@tabler/icons-react";
 import { motion } from "framer-motion";
+import { getImageUrl } from "@/data/siteMetadata";
 
 export default function PersonFoundingLink({ person }) {
   return (
     <div className="flex gap-4 items-center rounded-full bg-slate-100 bg-opacity-35">
       <img
-        src={
-          person?.avatar
-            ? `/files/${person.avatar}`
-            : `https://ui-avatars.com/api/?name=${person.name}&background=random`
-        }
+        src={getImageUrl(person.avatar, person.name)}
         alt={person.name + " avatar"}
         className="w-32 h-32 rounded-full"
       />
