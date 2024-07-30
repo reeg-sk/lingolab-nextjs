@@ -62,6 +62,15 @@ async function getCoursesFaq() {
   return directus.request(readItems("courses_faq"));
 }
 
+async function getLatestPosts() {
+  return directus.request(readItems("posts", {
+    limit: 3,
+    status: "published",
+    sort: ["-date_created"],
+    fields: ["title", "slug", "description", "date_created", "cover", "user_created"],
+  }));
+}
+
 export {
   getGlobals,
   getSocials,
@@ -70,4 +79,5 @@ export {
   getLecturers,
   getLanguages,
   getCoursesFaq,
+  getLatestPosts,
 };
