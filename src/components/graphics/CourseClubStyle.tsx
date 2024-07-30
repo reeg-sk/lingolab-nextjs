@@ -14,8 +14,8 @@ export default function CourseClubStyle() {
       />
       <defs>
         <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
-          <stop stop-color="#818cf8" />
-          <stop offset="1" stop-color="#818cf8" />
+          <stop stopColor="#818cf8" />
+          <stop offset="1" stopColor="#818cf8" />
         </radialGradient>
       </defs>
     </svg>
