@@ -4,7 +4,7 @@ import LectureOffer from "../util/LectureOffer";
 export default function FreeLecture() {
   return (
     <section
-      id="hodina-zdarma"
+      id="uvodna-konzultacia"
       className="relative container mx-auto md:mt-16 mt-16 xl:mt-0 mb-16 max-w-7xl flex justify-center flex-col p-4"
     >
       <div className="hidden lg:block">
