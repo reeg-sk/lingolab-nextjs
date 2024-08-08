@@ -15,7 +15,7 @@ export default function LectureOffer({
           isHero ? "sm:text-4xl" : "sm:text-3xl"
         } text-balance`}
       >
-        Ukážková hodina <span className="text-primary">zdarma</span> pre nových
+        Úvodná konzultácia <span className="text-primary">zdarma</span> pre nových
         študentov
       </h2>
       <p className="mt-6 text-lg leading-8 text-slate-700 max-w-xl">

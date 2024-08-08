@@ -2,6 +2,7 @@ import { getSocials } from "@/lib/records";
 import {
   IconBrandFacebook,
   IconBrandInstagram,
+  IconBrandLinkedin,
   IconBrandX,
 } from "@tabler/icons-react";
 
@@ -11,7 +12,7 @@ export default async function Socials({
 }: {
   longName?: boolean;
 }) {
-  const { facebook, instagram, twitter } = await getSocials();
+  const { facebook, instagram, linkedin } = await getSocials();
 
   const socials = [
     {
@@ -25,9 +26,9 @@ export default async function Socials({
       link: `https://www.instagram.com/${instagram}`,
     },
     {
-      name: "Twitter",
-      Icon: IconBrandX,
-      link: `https://www.twitter.com/${twitter}`,
+      name: "Linkedin",
+      Icon: IconBrandLinkedin,
+      link: `https://www.linkedin.com/company/${linkedin}`,
     },
   ];
 

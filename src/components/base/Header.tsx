@@ -12,7 +12,7 @@ export default function Header({
     { title: "Domov", url: "/" },
     { title: "Kurzy", url: "/kurzy" },
     { title: "O nás", url: "/o-nas" },
-    { title: "Blog", url: "/blog" },
+    // { title: "Blog", url: "/blog" },
     { title: "Kontakt", url: "/kontakt" },
   ],
 }: {

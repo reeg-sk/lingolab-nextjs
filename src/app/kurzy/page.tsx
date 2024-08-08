@@ -7,6 +7,7 @@ import { getCoursesFaq, getLanguages } from "@/lib/records";
 import { IconZoomQuestion } from "@tabler/icons-react";
 import type { Metadata } from "next";
 import Link from "next/link";
+// import { useState } from "react";
 
 export const metadata: Metadata = {
   title: "Kurzy – LingoLab",
@@ -17,6 +18,8 @@ export default async function Courses() {
   const languages = await getLanguages();
   // @ts-ignore - questions is not defined?
   const { questions } = await getCoursesFaq();
+
+  // const [activeMode, setActiveMode] = useState("individuálne");
 
   return (
     <div className="px-4">
@@ -33,6 +36,12 @@ export default async function Courses() {
 
         <div className="relative grid lg:lg:grid-cols-[minmax(540px,_1fr)_minmax(480px,520px)] gap-x-4">
           <div className="md:mb-12">
+            {/* Wrap to client component and make a switch */}
+            {/* <select name="" id="">
+              <option value="">Individuálne</option>
+              <option value="">Vo dvojici</option>
+            </select>
+            individuálne - vo dvojici */}
             {[...new Set(languages.map((language) => language.type))].map(
               (type) => (
                 <CourseListing
