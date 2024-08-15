@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" version="1.1" id="svg1" viewBox="77.86 39.54 54.5 63.54">
+  <defs id="defs1">
+    <rect x="134.0492" y="373.66691" width="194.80805" height="31.138909" id="rect19"/>
+  </defs>
+  <g id="layer1">
+    <g id="g2" style="fill:#000053;fill-opacity:1" transform="translate(-0.11259842,-0.81232834)">
+      <g id="g9">
+        <g id="g13" style="display:inline" transform="matrix(1,0,0,0.97392891,0.40189457,2.5621413)">
+          <g id="g14" transform="translate(-54.959066,0.30142084)">
+            <g id="g18">
+              <g id="g19">
+                <g id="g20" transform="matrix(1.3255571,0,0,1,-45.968904,0)">
+                  <g id="g26" transform="translate(62.493829,-0.29178956)">
+                    <g id="g22" transform="matrix(0.7543998,0,0,1.026769,75.841778,-2.9321481)" style="fill:#000053;fill-opacity:1"/>
+                    <g id="g3" transform="translate(-27.893396,5.983465)">
+                      <g id="g6">
+                        <path id="path25" style="fill:#4747f3;fill-opacity:1;stroke-width:0.237373" d="m 118.4132,32.812107 v 0.0048 a 17.640172,32.666717 0 0 1 17.52595,32.661875 17.640172,32.666717 0 0 1 -3.77099,20.132045 h 9.00625 v -52.79872 z"/>
+                        <path id="rect24" style="fill:#4747f3;fill-opacity:1;stroke-width:0.244632" d="m 132.07343,85.7027 -22.58071,0.03396 0.01,12.321008 9.06217,-0.0133 v -0.002 c 0.0679,0.009 0.0833,0.005 0.13506,-5.3e-4 5.17496,-0.0229 10.06053,-4.54486 13.37374,-12.339046 z"/>
+                        <path id="rect21" style="display:inline;fill:#00004d;fill-opacity:1;stroke-width:0.213166" d="m 107.87427,32.862041 c -4.33994,0.527681 -7.70488,4.563538 -7.80673,9.484821 v 42.84151 h 9.05264 V 32.812024 Z"/>
+                        <rect style="display:inline;fill:#00004d;fill-opacity:1;stroke-width:0.244835" id="rect22" width="31.684809" height="12.321225" x="100.00396" y="73.271187" transform="matrix(0.9999989,-0.00148503,8.0166749e-4,0.99999968,0,0)"/>
+                        <rect style="fill:#4747f3;fill-opacity:1;stroke-width:0.213166" id="rect23" width="9.0527973" height="52.376225" x="109.49751" y="45.646683"/>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="g4" transform="translate(13.208919,12.28458)" style="fill:#5151f7;fill-opacity:1">
+      <g id="g5" style="fill:#5151f7;fill-opacity:1">
+        <g id="g7" style="fill:#5151f7;fill-opacity:1"/>
+      </g>
+    </g>
+  </g>
+</svg>

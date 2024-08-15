@@ -72,7 +72,7 @@ export default async function AboutUs() {
       </section>
       <section
         id="lektori"
-        className="relative container mx-auto max-w-7xl flex justify-center flex-col pt-12 md:pt-24"
+        className="relative container mx-auto max-w-7xl flex justify-center flex-col pt-12 md:pt-32"
       >
         <h2 className="text-3xl mb-8 font-bold text-balance">
           Úžastní lektori
