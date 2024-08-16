@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import Logo from "../icons/Logo";
-import { IconMenu } from "@tabler/icons-react";
+import { IconMenu2 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 
 export default function Header({
@@ -44,7 +44,7 @@ export default function Header({
             <motion.div
               className={`${
                 navbarOpen
-                  ? "flex border-b flex-col py-4 absolute top-20 bg-white w-full"
+                  ? "flex border-b flex-col py-4 absolute top-20 bg-white/95 backdrop-blur-xl  w-full"
                   : "hidden"
               } lg:border-none lg:flex-row lg:py-0 lg:w-fit lg:bg-transparent lg:relative lg:top-0 ml-auto lg:flex lg:items-center lg:gap-3 px-4`}
             >
@@ -84,7 +84,7 @@ export default function Header({
                 className="lg:hidden p-2 pr-4"
                 aria-label="Otvoriť navigáciu"
               >
-                <IconMenu />
+                <IconMenu2 />
               </button>
             </div>
           </div>
