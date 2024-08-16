@@ -27,7 +27,7 @@ export default function Header({
   return (
     <>
       <header
-        className={`fixed left-1/2 -translate-x-1/2 z-50 w-full flex-none text-sm font-semibold leading-6 text-slate-900 bg-white/75`}
+        className={`fixed left-1/2 -translate-x-1/2 z-50 w-full flex-none text-sm font-semibold leading-6 text-slate-900 bg-white/75 backdrop-blur-md border-b`}
       >
         <nav
           aria-label="Global"

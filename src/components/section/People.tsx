@@ -28,14 +28,14 @@ export default async function People() {
         <div className="flex flex-col md:flex-row  justify-center items-center gap-x-6 gap-y-2 xl:col-span-2">
           <a
             href="/o-nas#lektori"
-            className="group w-full transition-all md:w-fit flex gap-2 items-center rounded-md border border-primary text-primary py-3 px-8 lg:px-5 text-sm font-semibold shadow-sm hover:bg-indigo-50"
+            className="group w-full transition-all md:w-fit flex gap-2 items-center rounded-md border border-primary text-primary py-3 px-8 lg:px-5 text-sm font-semibold shadow-sm hover:bg-indigo-50 justify-center md:justify-start"
           >
             <IconUserCheck />
             Je nás ešte viac
           </a>
           <a
             href="/o-nas/nabor"
-            className="w-full md:w-fit group text-sm font-semibold leading-6 border border-slate-500 py-3 px-8 lg:px-5 md:border-none rounded-lg text-slate-700 hover:text-slate-900"
+            className="w-full md:w-fit group text-sm font-semibold leading-6 border border-slate-500 py-3 px-8 lg:px-5 md:border-none rounded-lg text-slate-700 hover:text-slate-900 text-center md:text-left"
           >
             Pridaj sa k nám
           </a>

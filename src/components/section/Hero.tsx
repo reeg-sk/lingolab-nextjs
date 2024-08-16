@@ -28,7 +28,7 @@ export default function Hero({ languages }) {
         <div className="flex flex-col md:flex-row gap-4 md:items-center">
           <Link
             href="/kurzy"
-            className="flex items-center gap-2 rounded-lg text-sm font-semibold py-4 px-8 text-white transition-all duration-500 bg-gradient-to-tl from-indigo-500 via-indigo-400 to-indigo-600 bg-size-200 bg-pos-0 hover:bg-pos-100"
+            className="flex items-center justify-center md:justify-start gap-2 rounded-lg text-sm font-semibold py-4 px-8 text-white transition-all duration-500 bg-gradient-to-tl from-indigo-500 via-indigo-400 to-indigo-600 bg-size-200 bg-pos-0 hover:bg-pos-100 text-center md:text-left"
           >
             <motion.span
               animate={{
@@ -41,7 +41,7 @@ export default function Hero({ languages }) {
           </Link>
           <Link
             href="/o-nas#lektori"
-            className="text-slate-700 py-3 px-8 lg:px-5 border md:border-none rounded-lg hover:text-slate-900"
+            className="text-slate-700 py-3 px-8 lg:px-5 border md:border-none rounded-lg hover:text-slate-900 text-center md:text-left"
           >
             Vyhľadať lektora
           </Link>
