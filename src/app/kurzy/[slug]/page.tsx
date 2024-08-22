@@ -1,6 +1,5 @@
 import StyleIndex from "@/components/graphics/StyleIndex";
 import { findFlagUrlByIso2Code } from "country-flags-svg";
-import { Metadata } from "next";
 import directus from "@/lib/directus";
 import { notFound } from "next/navigation";
 import { readItem } from "@directus/sdk";

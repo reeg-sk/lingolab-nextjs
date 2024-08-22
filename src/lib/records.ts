@@ -29,15 +29,13 @@ async function getLecturers(limit = 6) {
       limit: Number(limit),
       status: "published",
       sort: ["-date_created"],
-      fields: ["name", "avatar", "language", "languagecode", "slug"],
+      fields: ["id", "name", "avatar", "language", "languagecode", "slug"],
     })
   );
 }
 
 async function getFoundingMembers() {
-  return directus.request(
-    readItems("foundingMembers")
-  );
+  return directus.request(readItems("foundingMembers"));
 }
 
 async function getLanguages(limit = 100) {
@@ -55,9 +53,9 @@ async function getLanguages(limit = 100) {
           lecturers: [
             {
               lecturers_id: ["name", "avatar", "slug"],
-            }
+            },
           ],
-        }
+        },
       ],
       deep: { lecturers: { _limit: 3 } },
     })
@@ -69,12 +67,25 @@ async function getCoursesFaq() {
 }
 
 async function getLatestPosts() {
-  return directus.request(readItems("posts", {
-    limit: 3,
-    status: "published",
-    sort: ["-date_created"],
-    fields: ["title", "slug", "description", "date_created", "cover", "user_created"],
-  }));
+  return directus.request(
+    readItems("posts", {
+      limit: 3,
+      status: "published",
+      sort: ["-date_created"],
+      fields: [
+        "title",
+        "slug",
+        "description",
+        "date_created",
+        "cover",
+        "user_created",
+      ],
+    })
+  );
+}
+
+async function getLecturer(slug) {
+  return directus.request(readItem("lecturers", slug));
 }
 
 export {
@@ -87,4 +98,5 @@ export {
   getCoursesFaq,
   getLatestPosts,
   getFoundingMembers,
+  getLecturer,
 };

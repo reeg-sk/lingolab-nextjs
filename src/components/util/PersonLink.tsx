@@ -1,11 +1,11 @@
 import { findFlagUrlByIso2Code } from "country-flags-svg";
-import assetUrl, { getImageUrl } from "@/data/siteMetadata";
+import { getImageUrl } from "@/data/siteMetadata";
 import Link from "next/link";
 
 export default function PersonLink({ person }) {
   return (
     <Link
-      href={`/lektori/${person.slug}`}
+      href={`/lektori/${person.id}-${person.slug}`}
       className="group flex items-center gap-x-6 group hover:bg-slate-50 rounded-full"
     >
       <img

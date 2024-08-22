@@ -28,7 +28,7 @@ export default async function Courses() {
         id="zoznam"
         className="relative container mx-auto max-w-7xl flex justify-center flex-col mb-12 md:mb-0"
       >
-        <div className="mt-2">
+        <div className="mt-6">
           <h1 className="text-3xl mb-8 font-extrabold sm:text-5xl sm:leading-[3.5rem] text-balance">
             Dostupné kurzy
           </h1>
