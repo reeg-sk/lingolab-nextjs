@@ -1,7 +1,8 @@
 import Socials from "@/components/base/Socials";
 import StyleIndex from "@/components/graphics/StyleIndex";
+import StyleLecture from "@/components/graphics/StyleLecture";
 import { getGlobals } from "@/lib/records";
-import { IconMapPins, IconPhone, IconRecordMail } from "@tabler/icons-react";
+import { IconMail, IconMapPins, IconPhone } from "@tabler/icons-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -19,11 +20,11 @@ export default async function Contact() {
     },
     {
       Icon: IconPhone,
-      content: phone.replace(/\d{3,4}?(?=...)/g, '$& '),
+      content: phone.replace(/\d{3,4}?(?=...)/g, "$& "),
       url: `tel:${phone}`,
     },
     {
-      Icon: IconRecordMail,
+      Icon: IconMail,
       content: email,
       url: `mailto:${email}`,
     },
@@ -36,7 +37,7 @@ export default async function Contact() {
         id="kontakt"
         className="relative container mx-auto max-w-7xl flex justify-center flex-col mb-12 md:mb-0"
       >
-        <h1 className="text-3xl mb-12 font-extrabold sm:text-5xl sm:leading-[3.5rem] text-balance">
+        <h1 className="mt-6 text-3xl mb-12 font-extrabold sm:text-5xl sm:leading-[3.5rem] text-balance">
           Kontakt
         </h1>
         <div className="grid lg:grid-cols-2 gap-4">
@@ -57,20 +58,24 @@ export default async function Contact() {
                 </div>
               ))}
             </div>
-            <div className="rounded mt-8 pt-4 w-fit border-t">
-              <Socials longName />
+            <div className="mt-12 bg-slate-200">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d168539.40049426706!2d21.07438873562737!3d48.697297326391464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473ee01b67c6957b%3A0x400f7d1c6978bd0!2zS2_FoWljZQ!5e0!3m2!1sen!2ssk!4v1721051734873!5m2!1sen!2ssk"
+                width="600"
+                height="450"
+                className="rounded w-full"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
-          <div className="bg-slate-200">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d168539.40049426706!2d21.07438873562737!3d48.697297326391464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473ee01b67c6957b%3A0x400f7d1c6978bd0!2zS2_FoWljZQ!5e0!3m2!1sen!2ssk!4v1721051734873!5m2!1sen!2ssk"
-              width="600"
-              height="450"
-              className="rounded w-full"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
+        </div>
+        <div className="relative my-8 py-8">
+          <StyleLecture />
+          <h3 className="text-center text-3xl font-semibold my-8 mb-16">
+             Nájdete nás aj na sociálnych sieťach
+          </h3>
+          <Socials longName />
         </div>
       </section>
     </div>

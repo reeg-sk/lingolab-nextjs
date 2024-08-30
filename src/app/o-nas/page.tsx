@@ -22,7 +22,7 @@ export default async function AboutUs() {
         className="relative container mx-auto max-w-7xl flex justify-center flex-col mb-12 md:mb-0"
       >
         <AboutStyle />
-        <h1 className="text-3xl mb-8 font-extrabold sm:text-5xl sm:leading-[3.5rem] text-balance">
+        <h1 className="mt-6 text-3xl mb-8 font-extrabold sm:text-5xl sm:leading-[3.5rem] text-balance">
           O nás
         </h1>
         <div className="grid lg:grid-cols-2 mt-2 gap-x-4">
