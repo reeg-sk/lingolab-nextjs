@@ -1,5 +1,5 @@
 "use client";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -21,39 +21,14 @@ export default function Header({
   const pathname = usePathname();
   useEffect(() => {
     setNavbarOpen(false);
-    setTop(0);
   }, [pathname]);
-
-  const [prevScrollpos, setPrevScrollpos] = useState(0);
-  const [top, setTop] = useState(0);
-
-  const handleScroll = () => {
-    const currentScrollPos = window.scrollY;
-    if (currentScrollPos < 200) return;
-    if (prevScrollpos > currentScrollPos) {
-      setTop(0);
-    } else {
-      setTop(-125);
-    }
-    setPrevScrollpos(currentScrollPos);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [prevScrollpos]);
 
   let [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
     <>
       <header
-        className={`fixed left-1/2 -translate-x-1/2 z-50 w-full flex-none text-sm font-semibold leading-6 text-slate-900 bg-white/75 backdrop-blur-md border-b transition-all duration-300 ease-in-out ${
-          top < -10 ? "border-primary/60 border-b-4" : "border-slate-100"
-        }`}
-        style={{ top: top }}
+        className={`fixed left-1/2 -translate-x-1/2 z-50 w-full flex-none text-sm font-semibold leading-6 text-slate-900 bg-white/75 backdrop-blur-md border-b transition-all duration-300 ease-in-out border-slate-100`}
       >
         <nav
           aria-label="Global"
