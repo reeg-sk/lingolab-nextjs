@@ -1,6 +1,8 @@
-export default {
+const siteMetadata = {
   siteUrl: "https://lingolab.sk",
 };
+
+export default siteMetadata;
 
 export function getImageUrl(image, name) {
   return image

@@ -11,14 +11,14 @@ export default function LectureOffer({
   return (
     <div className={className}>
       <h2
-        className={`text-3xl font-bold tracking-tight text-slate-900 ${
+        className={`text-center md:text-left text-3xl font-bold tracking-tight text-slate-900 ${
           isHero ? "sm:text-4xl" : "sm:text-3xl"
         } text-balance`}
       >
         Úvodná konzultácia <span className="text-primary">zdarma</span> pre nových
         študentov
       </h2>
-      <p className="mt-6 text-lg leading-8 text-slate-700 max-w-xl">
+      <p className="text-center md:text-left text-balance mt-6 text-lg leading-8 text-slate-700 max-w-xl">
         Nie je problém si to vyskúšať. Zaregistrujte sa na ukážkovú hodinu
         a&nbsp;presvedčte sa sami. Naši lektori sú pripravení vám pomôcť
         s&nbsp;výberom úrovne.

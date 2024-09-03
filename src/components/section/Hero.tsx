@@ -18,7 +18,7 @@ export default function Hero({ languages }) {
     >
       {/* <HeroVideo src="/videos/promo-video.mp4" /> */}
       <div className="mt-12 mb-16 lg:mb-32 m-4">
-        <h1 className="text-3xl mb-12 font-extrabold sm:text-5xl sm:leading-[3.5rem] text-balance">
+        <h1 className="text-center md:text-left text-3xl mb-12 font-extrabold sm:text-5xl sm:leading-[3.5rem] text-balance">
           Naučíme vás{" "}
           <span className="bg-gradient-to-r from-white to-indigo-300">
             nový jazyk

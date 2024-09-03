@@ -32,6 +32,7 @@ export default async function Reviews() {
             </li>
           ))}
         </ul>
+        {/* More reviews?  */}
       </div>
     </section>
   );

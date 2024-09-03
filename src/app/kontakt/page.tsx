@@ -71,9 +71,11 @@ export default async function Contact() {
           </div>
         </div>
         <div className="relative my-8 py-8">
-          <StyleLecture />
+          <div className="relative overflow-hidden">
+            <StyleLecture />
+          </div>
           <h3 className="text-center text-3xl font-semibold my-8 mb-16">
-             Nájdete nás aj na sociálnych sieťach
+            Nájdete nás aj na sociálnych sieťach
           </h3>
           <Socials longName />
         </div>

@@ -10,7 +10,7 @@ export default async function People() {
     <section id="lektori">
       <div className="relative mx-auto grid max-w-2xl lg:max-w-7xl gap-x-8 gap-y-10 md:gap-y-20 px-4 pb-24">
         <div className="w-full xl:col-span-2">
-          <h2 className="text-3xl sm:text-center font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-center md:text-left text-3xl sm:text-center font-bold tracking-tight text-gray-900 sm:text-4xl">
             Lektori, ktorých sa oplatí spoznať
           </h2>
         </div>

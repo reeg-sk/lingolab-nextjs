@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 import siteMetadata from "@/data/siteMetadata";
-import { getLanguages, getLatestPosts } from "@/lib/records";
+import { getLanguages } from "@/lib/records";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = siteMetadata.siteUrl;

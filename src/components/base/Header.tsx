@@ -28,7 +28,7 @@ export default function Header({
   return (
     <>
       <header
-        className={`fixed left-1/2 -translate-x-1/2 z-50 w-full flex-none text-sm font-semibold leading-6 text-slate-900 bg-white/75 backdrop-blur-md border-b transition-all duration-300 ease-in-out border-slate-100`}
+        className={`fixed left-1/2 -translate-x-1/2 z-50 w-full flex-none text-sm font-semibold leading-6 text-slate-900 bg-white/85 backdrop-blur-md border-b transition-all duration-300 ease-in-out border-slate-100`}
       >
         <nav
           aria-label="Global"
@@ -45,7 +45,7 @@ export default function Header({
             <motion.div
               className={`${
                 navbarOpen
-                  ? "flex border-b flex-col py-4 absolute top-20 bg-white/95 backdrop-blur-xl  w-full"
+                  ? "flex border-b flex-col py-4 absolute top-20 bg-white backdrop-blur-xl  w-full"
                   : "hidden"
               } lg:border-none lg:flex-row lg:py-0 lg:w-fit lg:bg-transparent lg:relative lg:top-0 ml-auto lg:flex lg:items-center lg:gap-3 px-4`}
             >
