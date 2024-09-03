@@ -35,19 +35,16 @@ export default async function Lecturer({ params }) {
         id="pribeh"
         className="relative container mx-auto max-w-7xl flex justify-center flex-col mb-12 md:mb-0"
       >
-        <div className="relative">
-          <div className="-z-10 absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
-          <Image
-            className="relative -bottom-10 left-4 rounded-full border-4 border-white"
-            src={getImageUrl(lecturer.avatar, lecturer.name)}
-            width={120}
-            height={120}
-            alt={lecturer.name}
-          />
-        </div>
         <div className="grid lg:grid-cols-[306px_minmax(640px,_1fr)] mt-2 gap-x-4 mx-4">
           <div className="grid gap-4">
-            <h1 className="text-3xl mt-12 font-semibold sm:text-5xl sm:leading-[3.5rem] text-balance">
+            <Image
+              className="relative rounded-full border-4 border-white"
+              src={getImageUrl(lecturer.avatar, lecturer.name)}
+              width={120}
+              height={120}
+              alt={lecturer.name}
+            />
+            <h1 className="text-3xl mt-2 font-semibold sm:text-5xl sm:leading-[3.5rem] text-balance">
               {lecturer.name}
             </h1>
             <div className="flex gap-2 text-lg font-semibold leading-6 text-slate-700">
@@ -64,7 +61,9 @@ export default async function Lecturer({ params }) {
               Kosice, SK
             </p>
             <p className="font-light text-balance">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit qui est a facere laudantium eveniet culpa sed alias autem at sunt, quae dolorem reiciendis deserunt, eos magni magnam minima nobis.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit
+              qui est a facere laudantium eveniet culpa sed alias autem at sunt,
+              quae dolorem reiciendis deserunt, eos magni magnam minima nobis.
             </p>
           </div>
         </div>

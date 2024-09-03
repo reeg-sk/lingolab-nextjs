@@ -1,26 +1,57 @@
 "use client";
 import { IconBriefcaseFilled } from "@tabler/icons-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { findFlagUrlByIso2Code } from "country-flags-svg";
 import Link from "next/link";
 
 import { AnimatePresence, motion } from "framer-motion";
 import LanguageList from "../util/LanguageList";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function Hero({ languages }) {
-  const [activeHoverLanguage, setActiveHoverLanguage] =
-    useState<any>(null);
+  const [activeHoverLanguage, setActiveHoverLanguage] = useState<any>(null);
+
+  const container = useRef(null);
+  gsap.registerPlugin(useGSAP);
+
+  useGSAP(
+    () => {
+      const tl = gsap.timeline();
+
+      tl.from("h1", {
+        opacity: 0,
+        y: 20,
+        duration: 1,
+      });
+
+      tl.from(".gradient", {
+        backgroundPosition: "-100px -100px",
+        duration: 1,
+        delay: -1,
+      });
+
+      tl.from(".offer", {
+        opacity: 0,
+        y: 80,
+        duration: 1,
+        delay: -1,
+      });
+    },
+    { scope: container }
+  );
 
   return (
     <section
       id="hero"
+      ref={container}
       className="relative min-h-screen container mx-auto max-w-7xl flex justify-center flex-col"
     >
       {/* <HeroVideo src="/videos/promo-video.mp4" /> */}
       <div className="mt-12 mb-16 lg:mb-32 m-4">
         <h1 className="text-center md:text-left text-3xl mb-12 font-extrabold sm:text-5xl sm:leading-[3.5rem] text-balance">
           Naučíme vás{" "}
-          <span className="bg-gradient-to-r from-white to-indigo-300">
+          <span className="gradient bg-gradient-to-r from-white to-indigo-300">
             nový jazyk
           </span>
           , aby ste sa vo svete nestratili
@@ -28,7 +59,7 @@ export default function Hero({ languages }) {
         <div className="flex flex-col md:flex-row gap-4 md:items-center">
           <Link
             href="/kurzy"
-            className="flex items-center justify-center md:justify-start gap-2 rounded-lg text-sm font-semibold py-4 px-8 text-white transition-all duration-500 bg-gradient-to-tl from-indigo-500 via-indigo-400 to-indigo-600 bg-size-200 bg-pos-0 hover:bg-pos-100 text-center md:text-left"
+            className="offer flex items-center justify-center md:justify-start gap-2 rounded-lg text-sm font-semibold py-4 px-8 text-white transition-all duration-500 bg-gradient-to-tl from-indigo-500 via-indigo-400 to-indigo-600 bg-size-200 bg-pos-0 hover:bg-pos-100 text-center md:text-left"
           >
             <motion.span
               animate={{
@@ -50,9 +81,7 @@ export default function Hero({ languages }) {
 
       <div className="relative">
         <div className="flex justify-between items-center m-4">
-          <h2 className="md:text-2xl text-balance">
-            Nami ponúkané jazyky
-          </h2>
+          <h2 className="md:text-2xl text-balance">Nami ponúkané jazyky</h2>
           <div className="hidden sm:block">
             <AnimatePresence>
               {activeHoverLanguage && (
