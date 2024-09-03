@@ -74,7 +74,7 @@ export default async function Contact() {
           <div className="relative overflow-hidden">
             <StyleLecture />
           </div>
-          <h3 className="text-center text-3xl font-semibold my-8 mb-16">
+          <h3 className="text-center text-3xl font-semibold my-8 mb-8 md:mb-16">
             Nájdete nás aj na sociálnych sieťach
           </h3>
           <Socials longName />
