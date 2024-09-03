@@ -59,7 +59,7 @@ export default async function AboutUs() {
             </div>
           </div>
         </div>
-        <div className="relative mt-12">
+        <div className="relative pt-12 md:pt-32">
           <h2 className="text-3xl mb-8 font-bold text-balance">
             Zakladajúci členovia
           </h2>
@@ -74,9 +74,7 @@ export default async function AboutUs() {
         id="lektori"
         className="relative container mx-auto max-w-7xl flex justify-center flex-col pt-12 md:pt-32"
       >
-        <h2 className="text-3xl mb-8 font-bold text-balance">
-          Úžastní lektori
-        </h2>
+        <h2 className="text-3xl mb-8 font-bold text-balance">Naši lektori</h2>
         <div className="grid lg:grid-cols-3 gap-x-8 gap-y-12">
           {members.map((person) => (
             <PersonLink key={person.name} person={person} />

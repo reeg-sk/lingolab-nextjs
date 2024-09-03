@@ -7,7 +7,7 @@ export default function PersonFoundingLink({ person }) {
       <img
         src={getImageUrl(person.avatar, person.name)}
         alt={person.name + " avatar"}
-        className="w-32 h-32 rounded-full"
+        className="h-16 w-16 md:h-24 md:w-24 rounded-full"
       />
       <div>
         <h4 className="text-lg font-semibold leading-7 tracking-tight text-gray-900">
@@ -25,3 +25,4 @@ export default function PersonFoundingLink({ person }) {
     </div>
   );
 }
+ 

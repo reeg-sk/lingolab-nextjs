@@ -91,7 +91,7 @@ export default function Header({
           </div>
         </nav>
       </header>
-      <div className="pb-32"></div>
+      <div className="pb-24 lg:pb-32"></div>
     </>
   );
 }

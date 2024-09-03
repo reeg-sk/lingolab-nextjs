@@ -63,7 +63,7 @@ export default async function Lecturer({ params }) {
               <IconMapPin size={24} />
               Kosice, SK
             </p>
-            <p className="font-light">
+            <p className="font-light text-balance">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit qui est a facere laudantium eveniet culpa sed alias autem at sunt, quae dolorem reiciendis deserunt, eos magni magnam minima nobis.
             </p>
           </div>
