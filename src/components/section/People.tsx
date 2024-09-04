@@ -4,8 +4,7 @@ import PersonLink from "../util/PersonLink";
 import { getLecturers } from "@/lib/records";
 import DoodleBothWays from "../graphics/DoodleBothWays";
 
-export default async function People() {
-  const people = await getLecturers();
+export default async function People({ people }) {
 
   return (
     <section id="lektori">

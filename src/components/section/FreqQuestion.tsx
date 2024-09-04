@@ -2,8 +2,7 @@ import { getFaq } from "@/lib/records";
 import Details from "../util/Details";
 
 
-export default async function FreqQuestions() {
-  const { questions } = await getFaq();
+export default async function FreqQuestions({ questions }) {
 
   return (
     <section id="faq">

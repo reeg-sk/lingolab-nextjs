@@ -2,13 +2,11 @@ import StyleReviews from "../graphics/StyleReviews";
 import { getReviews } from "@/lib/records";
 import Review from "../util/Review";
 
-export default async function Reviews() {
-  const reviews = await getReviews();
-
+export default async function Reviews({ reviews }) {
   return (
-    <section id="recenzie" className="relative mb-8">
+    <section id="recenzie" className="relative my-8">
       <StyleReviews />
-      <div className="mx-auto grid max-w-2xl lg:max-w-7xl gap-x-8 gap-y-10 md:gap-y-20 px-4 pb-24">
+      <div className="mx-auto grid max-w-2xl lg:max-w-7xl gap-x-8 gap-y-10 md:gap-y-20 px-4">
         <div className="w-full text-center xl:col-span-2">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Čo o nás hovoria naši študenti

@@ -13,10 +13,10 @@ async function getFaq() {
   return directus.request(readSingleton("faq"));
 }
 
-async function getReviews() {
+async function getReviews(limit = 3) {
   return directus.request(
     readItems("reviews", {
-      limit: 3,
+      limit,
       status: "published",
       sort: ["-date_created"],
     })

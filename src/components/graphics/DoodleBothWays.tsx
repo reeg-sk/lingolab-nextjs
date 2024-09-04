@@ -1,7 +1,7 @@
 export default function DoodleBothWays() {
   return (
     <svg
-      className="hidden lg:block w-24 h-24 absolute right-0 -top-8 text-primary"
+      className="hidden lg:block w-24 h-24 absolute right-0 -top-8 text-primary opacity-75"
       viewBox="0 0 119 88"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
