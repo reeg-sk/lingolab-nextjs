@@ -1,3 +1,4 @@
+import DoodleSpin from "@/components/graphics/DoodleSpin";
 import StyleIndex from "@/components/graphics/StyleIndex";
 import FreeLecture from "@/components/section/FreeLecture";
 import FreqQuestions from "@/components/section/FreqQuestion";
@@ -19,6 +20,9 @@ export default async function Home() {
       <People />
       <FreqQuestions />
       <Reviews />
+      <div className="flex justify-center">
+        <DoodleSpin />
+      </div>
     </>
   );
 }

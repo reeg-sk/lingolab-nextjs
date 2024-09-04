@@ -1,5 +1,6 @@
 import { IconCalendarFilled } from "@tabler/icons-react";
 import Link from "next/link";
+import DoodleArrows from "../graphics/DoodleArrows";
 
 export default function LectureOffer({
   isHero = false,
@@ -10,13 +11,14 @@ export default function LectureOffer({
 }) {
   return (
     <div className={className}>
+      <DoodleArrows />
       <h2
         className={`text-center md:text-left text-3xl font-bold tracking-tight text-slate-900 ${
           isHero ? "sm:text-4xl" : "sm:text-3xl"
         } text-balance`}
       >
-        Úvodná konzultácia <span className="text-primary">zdarma</span> pre nových
-        študentov
+        Úvodná konzultácia <span className="text-primary">zdarma</span> pre
+        nových študentov
       </h2>
       <p className="text-center md:text-left text-balance mt-6 text-lg leading-8 text-slate-700 max-w-xl">
         Nie je problém si to vyskúšať. Zaregistrujte sa na ukážkovú hodinu
