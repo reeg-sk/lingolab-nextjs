@@ -10,6 +10,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://lingolab.sk'),
   title: "Jazyková škola – LingoLab",
   description:
     "Objavte radosť z učenia jazykov s našimi dynamickými kurzami. Skúsení lektori a individuálny prístup vás posunú k plynulosti rýchlo a efektívne.",
