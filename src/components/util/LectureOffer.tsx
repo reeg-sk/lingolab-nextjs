@@ -11,7 +11,7 @@ export default function LectureOffer({
 }) {
   return (
     <div className={className}>
-      <DoodleArrows />
+      {isHero && <DoodleArrows />}
       <h2
         className={`text-center md:text-left text-3xl font-bold tracking-tight text-slate-900 ${
           isHero ? "sm:text-4xl" : "sm:text-3xl"
