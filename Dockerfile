@@ -1,4 +1,5 @@
 FROM node:22.8-alpine AS base
+RUN apk upgrade --no-cache
 
 # Install dependencies only when needed
 FROM base AS deps
@@ -18,8 +19,7 @@ COPY . .
 
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
-# Uncomment the following line in case you want to disable telemetry during the build.
-# ENV NEXT_TELEMETRY_DISABLED=1
+ENV NEXT_TELEMETRY_DISABLED=1
 
 RUN npm run build
 
@@ -29,11 +29,10 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 
-ARG backend_url=https://lingolab.gtl.sk
-ENV BACKEND_URL=$backend_url
+ENV BACKEND_URL=https://lingolab.gtl.sk
 
 RUN --mount=type=secret,id=backend_token \
-    export BACKEND_URL=$(cat /run/secrets/backend_token)
+    export BACKEND_TOKEN=$(cat /run/secrets/backend_token)
 # Uncomment the following line in case you want to disable telemetry during runtime.
 ENV NEXT_TELEMETRY_DISABLED=1
 # https://nextjs.org/docs/messages/sharp-missing-in-production
