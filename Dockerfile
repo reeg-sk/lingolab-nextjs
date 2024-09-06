@@ -26,8 +26,9 @@ ENV BACKEND_URL=https://lingolab.gtl.sk
 RUN --mount=type=secret,id=BACKEND_TOKEN \
     BACKEND_TOKEN="$(cat /run/secrets/BACKEND_TOKEN)" && \ 
     export BACKEND_TOKEN && \
-    echo $BACKEND_TOKEN && \
     npm run build
+
+RUN npm prune --production
 
 # Production image, copy all the files and run next
 FROM base AS runner
