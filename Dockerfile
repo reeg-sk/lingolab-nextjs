@@ -21,7 +21,11 @@ COPY . .
 # Learn more here: https://nextjs.org/telemetry
 ENV NEXT_TELEMETRY_DISABLED=1
 
-RUN npm run build
+RUN --mount=type=secret,id=BACKEND_TOKEN \
+    BACKEND_TOKEN="$(cat /run/secrets/BACKEND_TOKEN)" && \ 
+    export BACKEND_TOKEN && \
+    echo $BACKEND_TOKEN && \
+    npm run build
 
 # Production image, copy all the files and run next
 FROM base AS runner
@@ -31,8 +35,6 @@ ENV NODE_ENV=production
 
 ENV BACKEND_URL=https://lingolab.gtl.sk
 
-RUN --mount=type=secret,id=backend_token \
-    export BACKEND_TOKEN=$(cat /run/secrets/backend_token)
 # Uncomment the following line in case you want to disable telemetry during runtime.
 ENV NEXT_TELEMETRY_DISABLED=1
 # https://nextjs.org/docs/messages/sharp-missing-in-production

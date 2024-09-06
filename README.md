@@ -28,7 +28,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Running in Docker
 
-To build an image use following command which is also passing the secret token to the image build:
+To build an image use following command which is also passing the secret token as an **env var** (`export BACKEND_URL=<url>`) to the image build:
 
 ```bash
 docker build -t lingolab-nextjs . --secret id=backend_token,env=BACKEND_TOKEN --no-cache --progress=plain
