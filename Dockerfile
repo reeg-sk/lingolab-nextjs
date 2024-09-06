@@ -21,6 +21,8 @@ COPY . .
 # Learn more here: https://nextjs.org/telemetry
 ENV NEXT_TELEMETRY_DISABLED=1
 
+ENV BACKEND_URL=https://lingolab.gtl.sk
+
 RUN --mount=type=secret,id=BACKEND_TOKEN \
     BACKEND_TOKEN="$(cat /run/secrets/BACKEND_TOKEN)" && \ 
     export BACKEND_TOKEN && \
@@ -32,8 +34,6 @@ FROM base AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
-
-ENV BACKEND_URL=https://lingolab.gtl.sk
 
 # Uncomment the following line in case you want to disable telemetry during runtime.
 ENV NEXT_TELEMETRY_DISABLED=1
