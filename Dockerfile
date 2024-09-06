@@ -1,5 +1,4 @@
 FROM node:22.8-alpine AS base
-RUN apk upgrade --no-cache
 
 # Install dependencies only when needed
 FROM base AS deps
