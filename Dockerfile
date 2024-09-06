@@ -8,8 +8,7 @@ WORKDIR /app
 
 # Install dependencies based on the preferred package manager
 COPY package.json package-lock.json ./
-RUN npm ci
-
+RUN npm ci && npm cache clean --force
 
 # Rebuild the source code only when needed
 FROM base AS builder
@@ -29,8 +28,15 @@ FROM base AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
+
+ARG backend_url=https://lingolab.gtl.sk
+ENV BACKEND_URL=$backend_url
+
+RUN --mount=type=secret,id=backend_token \
+    export BACKEND_URL=$(cat /run/secrets/backend_token)
 # Uncomment the following line in case you want to disable telemetry during runtime.
 ENV NEXT_TELEMETRY_DISABLED=1
+# https://nextjs.org/docs/messages/sharp-missing-in-production
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
