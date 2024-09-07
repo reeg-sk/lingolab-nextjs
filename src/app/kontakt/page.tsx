@@ -104,7 +104,7 @@ export default async function Contact() {
             ))}
           </>
         </GridContainer>
-        <hr className="my-24 bg-gray-400" />
+        <hr className="my-12 lg:my-24 bg-gray-50 lg:bg-gray-300" />
         <div className="relative">
           <StylePeople />
         </div>
@@ -123,8 +123,8 @@ export default async function Contact() {
             ></iframe>
           </div>
         </GridContainer>
-        <hr className="mt-24 bg-gray-400" />
-        <div id="socialne-siete" className="relative pt-24 pb-12">
+        <hr className="mt-12 lg:mt-24 bg-gray-300" />
+        <div id="socialne-siete" className="relative pt-12 lg:pt-24 pb-12">
           <h3 className="text-center text-3xl font-semibold my-8 mb-8 md:mb-16">
             Nájdete nás aj na sociálnych sieťach
           </h3>
