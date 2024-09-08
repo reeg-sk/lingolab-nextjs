@@ -131,11 +131,11 @@ export default async function Contact() {
           title="Kontaktný formulár"
           description="Alternatívne nás môžete kontaktovať aj pomocou formulára. Stačí vyplniť a my sa vám čo najskôr ozveme."
         >
-          <form className="grid grid-cols-2 col-span-2 gap-8">
-            <div className="grid grid-cols-1 gap-4">
+          <form className="grid lg:grid-cols-2 col-span-2 gap-8">
+            <div className="grid col-span-2 md:col-col-span-1 grid-cols-1 gap-4">
               <FloatingInput type="text" label="Meno" name="name" />
             </div>
-            <div className="grid grid-cols-1 gap-4">
+            <div className="grid col-span-2 md:col-col-span-1 grid-cols-1 gap-4">
               <FloatingInput type="email" label="Email" name="email" />
             </div>
             <div className="grid grid-cols-1 gap-4 col-span-2">
