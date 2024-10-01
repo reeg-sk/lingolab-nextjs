@@ -5,7 +5,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Nábor – LingoLab",
-  description: "Stále hľadáme šikovných ľudí, ktorí by sa chceli stať súčasťou nášho tímu.",
+  description: "Hľadáme skúsených a ambicióznych ľudí do nášho tímu. Chceš byť lektor? Písať blog? Alebo pracovať na administratíve? Pošli nám životopis.",
 };
 
 export default async function Recruitment() {

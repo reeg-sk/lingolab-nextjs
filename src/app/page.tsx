@@ -7,6 +7,11 @@ import People from "@/components/section/People";
 import Pros from "@/components/section/Pros";
 import Reviews from "@/components/section/Reviews";
 import { getFaq, getLanguages, getLecturers, getReviews } from "@/lib/records";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  description: 'Všetko o jazykoch na jednom mieste! Ponúkame doučovanie európskych jazykov – individuálne, pre páry, skupiny, aj certifikovanú prípravu na Cambridge, TOEFL a AiLS.',
+}
 
 export default async function Home() {
   const languages = await getLanguages(5);
