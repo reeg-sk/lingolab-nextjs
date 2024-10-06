@@ -6,6 +6,8 @@ import Image from "next/image";
 import { findFlagUrlByIso2Code } from "country-flags-svg";
 import { IconMapPin } from "@tabler/icons-react";
 
+export const revalidate = 60
+
 async function getPage(slug) {
   try {
     const [id, ...rest] = slug.split("-");

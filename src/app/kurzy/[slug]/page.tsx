@@ -4,6 +4,8 @@ import directus from "@/lib/directus";
 import { notFound } from "next/navigation";
 import { readItem } from "@directus/sdk";
 
+export const revalidate = 60
+
 async function getPage(slug) {
   try {
     const page = await directus.request(

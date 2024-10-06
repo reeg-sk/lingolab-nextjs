@@ -1,6 +1,5 @@
-import { getFaq } from "@/lib/records";
 import Details from "../util/Details";
-
+import Image from "next/image";
 
 export default async function FreqQuestions({ questions }) {
 
@@ -8,8 +7,8 @@ export default async function FreqQuestions({ questions }) {
     <section id="faq">
       <div className="relative mx-auto grid lg:grid-cols-2 items-center max-w-2xl lg:max-w-7xl gap-x-8 gap-y-10 md:gap-y-20 px-4 pb-24">
         <div className="overflow-hidden">
-          <img
-            src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
+          <Image
+            src="https://cdn.lingolab.sk/static/team.jpg"
             alt="Ukážka odpovedí na otázky našimi lektormi"
             className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-mr-32 lg:-ml-96"
             width="2432"

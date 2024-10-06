@@ -1,5 +1,6 @@
 import { IconArrowRight } from "@tabler/icons-react";
 import CourseClubStyle from "../graphics/CourseClubStyle";
+import Image from "next/image";
 
 export default function CourseClub() {
   return (
@@ -20,7 +21,7 @@ export default function CourseClub() {
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
             <a
-              href="#"
+              href="https://klub.lingolab.sk"
               className="flex gap-2 rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               Viac informácií
@@ -29,10 +30,10 @@ export default function CourseClub() {
           </div>
         </div>
         <div className="relative mt-16 h-80 lg:mt-8">
-          <img
+          <Image
             className="absolute left-0 top-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
-            src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
-            alt="App screenshot"
+            src="https://cdn.lingolab.sk/static/team.jpg"
+            alt="Klub LingoLab"
             width="1824"
             height="1080"
           />

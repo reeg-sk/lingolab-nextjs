@@ -8,6 +8,8 @@ import { getGlobals } from "@/lib/records";
 import { IconMessage } from "@tabler/icons-react";
 import { Metadata } from "next";
 
+export const revalidate = 60
+
 export const metadata: Metadata = {
   title: "Kontakt – LingoLab",
   description: "Máte otázky? Neváhajte nás kontaktovať! Sme tu pre vás. Ozvite sa cez formulár, e-mail alebo telefón, a radi vám pomôžeme s vašimi jazykovými potrebami.",

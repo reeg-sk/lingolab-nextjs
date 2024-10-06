@@ -9,6 +9,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 // import { useState } from "react";
 
+export const revalidate = 60
+
 export const metadata: Metadata = {
   title: "Kurzy – LingoLab",
   description: "Prihlás sa na kurz a rozvíjaj svoj jazykový potenciál! Ponúkame individuálne, duo aj skupinové hodiny a prípravu na maturitu či certifikáty.",

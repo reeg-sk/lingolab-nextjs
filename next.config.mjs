@@ -15,6 +15,12 @@ const nextConfig = {
         port: "",
         pathname: "/img/**",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.lingolab.sk",
+        port: "",
+        pathname: "/**",
+      }
     ],
   },
 };

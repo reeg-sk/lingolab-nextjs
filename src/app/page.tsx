@@ -9,9 +9,12 @@ import Reviews from "@/components/section/Reviews";
 import { getFaq, getLanguages, getLecturers, getReviews } from "@/lib/records";
 import { Metadata } from "next";
 
+export const revalidate = 120;
+
 export const metadata: Metadata = {
-  description: 'Všetko o jazykoch na jednom mieste! Ponúkame doučovanie európskych jazykov – individuálne, pre páry, skupiny, aj certifikovanú prípravu na Cambridge, TOEFL a AiLS.',
-}
+  description:
+    "Všetko o jazykoch na jednom mieste! Ponúkame doučovanie európskych jazykov – individuálne, pre páry, skupiny, aj certifikovanú prípravu na Cambridge, TOEFL a AiLS.",
+};
 
 export default async function Home() {
   const languages = await getLanguages(5);
@@ -27,7 +30,7 @@ export default async function Home() {
       <Pros />
       <People people={people} />
       <FreqQuestions questions={questions} />
-      <Reviews reviews={reviews} />
+      {reviews.length > 0 && <Reviews reviews={reviews} />}
       <CtaCall />
     </>
   );

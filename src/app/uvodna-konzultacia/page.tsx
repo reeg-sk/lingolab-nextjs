@@ -1,6 +1,8 @@
 import StyleIndex from "@/components/graphics/StyleIndex";
 import { Metadata } from "next";
 
+export const revalidate = 60
+
 export const metadata: Metadata = {
   title: "Úvodná konzultácia zdarma – LingoLab",
   description: "Úvodná konzultácia je čas venovaný nastaveniu a prispôsobeniu učebného plánu pre študenta,túto hodinu si každý môže rezervovať zadarmo bez viazania.",

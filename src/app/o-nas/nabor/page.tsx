@@ -3,6 +3,8 @@ import StyleIndex from "@/components/graphics/StyleIndex";
 import { IconBuildingCommunity, IconClock, IconLabelImportant, IconLanguage } from "@tabler/icons-react";
 import { Metadata } from "next";
 
+export const revalidate = 60
+
 export const metadata: Metadata = {
   title: "Nábor – LingoLab",
   description: "Hľadáme skúsených a ambicióznych ľudí do nášho tímu. Chceš byť lektor? Písať blog? Alebo pracovať na administratíve? Pošli nám životopis.",
