@@ -29,10 +29,10 @@ export default async function People({ people }) {
         <div className="flex flex-col md:flex-row  justify-center items-center gap-x-6 gap-y-2 xl:col-span-2">
           <a
             href="/o-nas#lektori"
-            className="group w-full transition-all md:w-fit flex gap-2 items-center rounded-md border border-primary text-primary py-3 px-8 lg:px-5 text-sm font-semibold shadow-sm hover:bg-indigo-50 justify-center md:justify-start"
+            className="group w-full transition-all md:w-fit flex gap-2 items-center rounded-md border border-primary text-white py-3 px-8 lg:px-5 text-sm font-semibold shadow-sm bg-primary hover:bg-indigo-500 justify-center md:justify-start"
           >
             <IconUserCheck />
-            Je nás ešte viac
+            Zoznam lektorov
           </a>
           <a
             href="/o-nas/nabor"

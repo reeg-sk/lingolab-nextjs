@@ -3,6 +3,7 @@ import { findFlagUrlByIso2Code } from "country-flags-svg";
 import Link from "next/link";
 import { IconCalendarCheck } from "@tabler/icons-react";
 import { getImageUrl } from "@/data/siteMetadata";
+import Image from "next/image";
 
 export default function LanguageList({
   languages = [],
@@ -30,9 +31,10 @@ export default function LanguageList({
         >
           <div>
             <div className="flex items-baseline gap-3">
-              <img
+              <Image
                 src={findFlagUrlByIso2Code(code)}
                 width={32}
+                height={32}
                 alt={`Kurz ${name}`}
               />
               <p className="text-lg font-semibold">{name}</p>
@@ -45,8 +47,10 @@ export default function LanguageList({
           <div className="justify-self-end">
             <div className="flex -space-x-1 overflow-hidden">
               {lecturers.map(({ lecturers_id }) => (
-                <img
+                <Image
                   key={lecturers_id.name}
+                  width={24}
+                  height={24}
                   className="inline-block h-6 w-6 rounded-full ring-2 ring-white"
                   src={getImageUrl(lecturers_id.avatar, lecturers_id.name)}
                   loading="lazy"

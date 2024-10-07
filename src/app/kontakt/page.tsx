@@ -131,7 +131,7 @@ export default async function Contact() {
         <hr className="my-12 lg:my-24 bg-gray-50 lg:bg-gray-300" />
         <GridContainer
           title="Kontaktný formulár"
-          description="Alternatívne nás môžete kontaktovať aj pomocou formulára. Stačí vyplniť a my sa vám čo najskôr ozveme."
+          description="Alternatívne nás môžete kontaktovať aj pomocou formulára. Stačí ho vyplniť a my sa vám čo najskôr ozveme."
         >
           <form className="grid lg:grid-cols-2 col-span-2 gap-8">
             <div className="grid col-span-2 md:col-col-span-1 grid-cols-1 gap-4">

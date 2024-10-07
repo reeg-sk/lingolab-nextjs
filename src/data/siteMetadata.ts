@@ -6,6 +6,6 @@ export default siteMetadata;
 
 export function getImageUrl(image, name) {
   return image
-    ? process.env.BACKEND_URL + "/assets/" + image
-    : `https://ui-avatars.com/api/?name=${name}&background=random`;
+    ? "https://cdn.lingolab.sk/uploads/" + image + ".jpg"
+    : `https://ui-avatars.com/api/?name=${name}&background=random&format=png`;
 }

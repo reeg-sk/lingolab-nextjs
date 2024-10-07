@@ -9,6 +9,7 @@ import LanguageList from "../util/LanguageList";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import LinkOffer from "../util/LinkOffer";
+import Image from "next/image";
 
 export default function Hero({ languages }) {
   const [activeHoverLanguage, setActiveHoverLanguage] = useState<any>(null);
@@ -48,6 +49,14 @@ export default function Hero({ languages }) {
       ref={container}
       className="relative min-h-screen container mx-auto max-w-7xl flex justify-center flex-col"
     >
+      <Image
+        width={720}
+        height={420}
+        src="/images/team-removebg.png"
+        alt="Hlavná stránka LingoLab"
+        // layout="responsive"
+        className="lg:absolute top-10 right-0"
+      />
       {/* <HeroVideo src="/videos/promo-video.mp4" /> */}
       <div className="mt-12 mb-16 lg:mb-32 m-4">
         <h1 className="text-center md:text-left text-3xl mb-12 font-extrabold sm:text-5xl sm:leading-[3.5rem] text-balance">
@@ -116,6 +125,27 @@ export default function Hero({ languages }) {
             languages={languages}
             setActiveHoverLanguage={setActiveHoverLanguage}
           />
+          <Link
+            href="/certifikaty"
+            className="group p-6 py-8 border-separate border border-green-200 bg-white flex items-center hover:bg-indigo-100 hover:border-indigo-400"
+            onMouseEnter={() => setActiveHoverLanguage(null)}
+          >
+                      <div>
+            <div className="flex items-baseline gap-3">
+              <Image
+                src={findFlagUrlByIso2Code('us')}
+                width={32}
+                height={32}
+                alt={`Certifikáty`}
+              />
+              <p className="text-lg font-semibold">Certifikáty C1, TOEFL & AiLS</p>
+            </div>
+            <div className="flex items-center">
+              <p className="text-slate-800">od 460 €</p>
+            </div>
+          </div>
+
+          </Link>
           <Link
             href="/kurzy"
             className="group p-6 py-8 border-separate border border-slate-200 bg-indigo-50 text-primary flex items-center hover:bg-indigo-100 hover:border-indigo-400"

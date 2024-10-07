@@ -10,7 +10,7 @@ export default async function FreqQuestions({ questions }) {
           <Image
             src="https://cdn.lingolab.sk/static/team.jpg"
             alt="Ukážka odpovedí na otázky našimi lektormi"
-            className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-mr-32 lg:-ml-96"
+            className="w-[48rem] object-[-11cm_0] md:object-center max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-mr-32 lg:-ml-96"
             width="2432"
             height="1442"
           />

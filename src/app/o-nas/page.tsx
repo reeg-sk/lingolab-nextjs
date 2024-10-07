@@ -41,13 +41,16 @@ export default async function AboutUs() {
           </div>
           <div className="flex items-center p-4">
             <div className="flex flex-col gap-2 max-w-2xl text-balance">
-              <p className="text-lg">
-                Sme tím Košichých mladých lektorov, ktorý disponujú certifikátmi
-                z danných jazykov ktoré budú vyučovať. Naša interná filozófia je
-                kvalita na úrok kvantity. Veríme že jazyk je v dnešnej dobe Alma
-                Mater a chceme zvýšiť úroveň jazyka u mladých ľudí ako aj pomôcť
-                starším či sa začleniť do nového a dynamického prostredia alebo
-                kariérne postúpiť.
+              <h3 className="text-3xl font-semibold mb-2">Kto sme?</h3>
+              <p className="leading-7 text-balance">
+                Sme tím mladých Košických lektorov, ktorí s nadšením a odbornými
+                certifikátmi vyučujú jazyky, ktoré sami milujú. Naša filozofia
+                je jednoduchá – <b>kladieme dôraz na kvalitu a osobný prístup</b>,
+                pretože veríme, že v dnešnom svete je jazyk tou pravou životnou
+                školou. Sme tu, aby sme pomohli mladým ľuďom zdokonaliť sa v
+                jazyku, a tiež starším otvoriť dvere do nových, dynamických
+                prostredí alebo napredovať v kariére. S nami objavíte krásu
+                učenia sa jazykov a získate nové možnosti!
               </p>
             </div>
           </div>

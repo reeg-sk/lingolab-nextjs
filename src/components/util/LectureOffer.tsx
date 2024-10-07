@@ -28,7 +28,7 @@ export default function LectureOffer({
       <div className="mt-10 flex flex-col md:flex-row items-center gap-x-6 gap-y-2">
         <Link
           href="/uvodna-konzultacia"
-          className="w-full transition-all md:w-fit flex gap-2 items-center rounded-md border border-primary text-primary py-3 px-8 lg:px-5 text-sm font-semibold shadow-sm hover:bg-indigo-50 justify-center md:justify-start"
+          className="w-full transition-all md:w-fit flex gap-2 items-center rounded-md border border-primary text-white py-3 px-8 lg:px-5 text-sm font-semibold shadow-sm bg-primary hover:bg-indigo-500 justify-center md:justify-start"
         >
           <IconCalendarFilled />
           Rezervovať
