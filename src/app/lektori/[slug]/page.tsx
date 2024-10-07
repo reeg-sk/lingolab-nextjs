@@ -6,7 +6,7 @@ import Image from "next/image";
 import { findFlagUrlByIso2Code } from "country-flags-svg";
 import { IconMapPin } from "@tabler/icons-react";
 
-export const revalidate = 60
+export const revalidate = 60;
 
 async function getPage(slug) {
   try {
@@ -37,8 +37,8 @@ export default async function Lecturer({ params }) {
         id="pribeh"
         className="relative container mx-auto max-w-7xl flex justify-center flex-col mb-12 md:mb-0"
       >
-        <div className="grid lg:grid-cols-[306px_minmax(640px,_1fr)] mt-2 gap-x-4 mx-4">
-          <div className="grid gap-4">
+        <div className="grid lg:grid-cols-[406px_minmax(640px,_1fr)] mt-2 gap-x-4 mx-4">
+          <div className="sticky grid gap-4 bg-white border rounded-lg p-8 w-full">
             <Image
               className="relative rounded-full border-4 border-white"
               src={getImageUrl(lecturer.avatar, lecturer.name)}
@@ -58,15 +58,34 @@ export default async function Lecturer({ params }) {
               />
               <p>{lecturer.language}</p>
             </div>
-            <p title="Lokalita" className="flex gap-2 text-xl font-light">
-              <IconMapPin size={24} />
-              Kosice, SK
-            </p>
-            <p className="font-light text-balance">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit
-              qui est a facere laudantium eveniet culpa sed alias autem at sunt,
-              quae dolorem reiciendis deserunt, eos magni magnam minima nobis.
-            </p>
+          </div>
+          <div className="flex flex-col gap-4">
+            <div className="gap-4 bg-white border rounded-lg p-8 w-full">
+              <h2 className="text-2xl mt-2 font-semibold sm:leading-[3.5rem] text-balance">
+                O mne
+              </h2>
+              <p className="text-balance mb-2">
+                {lecturer.description || "Zatiaľ tu nič nie je."}
+              </p>
+              <ul className="flex gap=ľ">
+                {lecturer.hobbies?.map(({ name, Icon }, index) => (
+                  <li
+                    key={index}
+                    className="rounded-2xl border bg-slate-100 p-2 px-3"
+                  >
+                    <p>{name}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="gap-4 bg-white border rounded-lg p-8 w-full">
+              <h2 className="text-2xl mt-2 font-semibold sm:leading-[3.5rem] text-balance">
+                Recenzie
+              </h2>
+              <p className="text-balance mb-2">
+                Zatiaľ tu žiadne nie sú.
+              </p>
+            </div>
           </div>
         </div>
       </section>
