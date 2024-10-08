@@ -42,6 +42,7 @@ async function getLanguages(limit = 100) {
   return directus.request(
     readItems("languages", {
       limit,
+      sort: "-type",
       fields: [
         "type",
         "slug",

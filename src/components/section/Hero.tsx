@@ -126,27 +126,6 @@ export default function Hero({ languages }) {
             setActiveHoverLanguage={setActiveHoverLanguage}
           />
           <Link
-            href="/certifikaty"
-            className="group p-6 py-8 border-separate border border-green-200 bg-white flex items-center hover:bg-indigo-100 hover:border-indigo-400"
-            onMouseEnter={() => setActiveHoverLanguage(null)}
-          >
-                      <div>
-            <div className="flex items-baseline gap-3">
-              <Image
-                src={findFlagUrlByIso2Code('us')}
-                width={32}
-                height={32}
-                alt={`Certifikáty`}
-              />
-              <p className="text-lg font-semibold">Certifikáty C1, TOEFL & AiLS</p>
-            </div>
-            <div className="flex items-center">
-              <p className="text-slate-800">od 460 €</p>
-            </div>
-          </div>
-
-          </Link>
-          <Link
             href="/kurzy"
             className="group p-6 py-8 border-separate border border-slate-200 bg-indigo-50 text-primary flex items-center hover:bg-indigo-100 hover:border-indigo-400"
             onMouseEnter={() => setActiveHoverLanguage(null)}

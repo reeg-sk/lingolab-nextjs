@@ -7,7 +7,6 @@ import { getCoursesFaq, getLanguages } from "@/lib/records";
 import { IconZoomQuestion } from "@tabler/icons-react";
 import type { Metadata } from "next";
 import Link from "next/link";
-// import { useState } from "react";
 
 export const revalidate = 60
 
@@ -20,8 +19,6 @@ export default async function Courses() {
   const languages = await getLanguages();
   // @ts-ignore - questions is not defined?
   const { questions } = await getCoursesFaq();
-
-  // const [activeMode, setActiveMode] = useState("individuálne");
 
   return (
     <div className="px-4">

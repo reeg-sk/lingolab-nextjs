@@ -8,14 +8,19 @@ import { getGlobals } from "@/lib/records";
 import { IconMessage } from "@tabler/icons-react";
 import { Metadata } from "next";
 
-export const revalidate = 60
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Kontakt – LingoLab",
-  description: "Máte otázky? Neváhajte nás kontaktovať! Sme tu pre vás. Ozvite sa cez formulár, e-mail alebo telefón, a radi vám pomôžeme s vašimi jazykovými potrebami.",
+  description:
+    "Máte otázky? Neváhajte nás kontaktovať! Sme tu pre vás. Ozvite sa cez formulár, e-mail alebo telefón, a radi vám pomôžeme s vašimi jazykovými potrebami.",
 };
 
-export default async function Contact() {
+export default async function Contact({
+  searchParams
+}: {
+  searchParams?: { [key: string]: string | string[] | undefined };
+}) {
   const { address, phone, email } = await getGlobals();
 
   // TODO: Add directus db records
@@ -27,40 +32,23 @@ export default async function Contact() {
       email: "ahoj@lingolab.sk",
     },
     {
-      text: "Marketing",
+      text: "Spolupráce",
       name: "Radovan Kokoš",
       email: "radovan.kokos@lingolab.sk",
-      phone: "+421 911 123 456",
+      phone: "+421 940 221 621",
     },
     {
-      text: "Obchod",
-      name: "Jana Kokošová",
-      email: "jana.kokosova@lingolab.sk",
-      phone: "+421 911 123 456",
+      text: "Nábor",
+      name: "David Jacečko",
+      email: "david.jacecko@lingolab.sk",
+      phone: "+421 944 934 090",
     },
     {
-      text: "Podpora",
-      name: "Peter Kokoš",
-      email: "peter.kokos@lingolab.sk",
-      phone: "+421 911 123 456",
+      text: "Technické chyby a návrhy",
+      name: "Andrej Kažmirský",
+      email: "andrej@kazmirsky.com",
+      // phone: "+421 911 123 456",
     },
-    // {
-    //   Icon: IconMapPins,
-    //   content: address,
-    //   text: "Adresa pobočky",
-    // },
-    // {
-    //   Icon: IconPhone,
-    //   content: phone.replace(/\d{3,4}?(?=...)/g, "$& "),
-    //   url: `tel:${phone}`,
-    //   text: "Telefónne číslo",
-    // },
-    // {
-    //   Icon: IconMail,
-    //   content: email,
-    //   url: `mailto:${email}`,
-    //   text: "Email",
-    // },
   ];
 
   return (
@@ -83,7 +71,7 @@ export default async function Contact() {
             {contactPersons.map(({ text, name, email, phone }, index) => (
               <div
                 key={index}
-                className="flex flex-col gap-4 bg-gray-50/90 rounded-2xl py-12 px-10"
+                className={`${text == "Nábor" && searchParams.recruit == "" ? "border-2 border-green-400 " : ""}flex flex-col gap-4 bg-gray-50/90 rounded-2xl py-12 px-10`}
               >
                 <div className="flex gap-2 mb-2">
                   <h3 className="text-lg font-semibold">{text}</h3>
@@ -115,11 +103,11 @@ export default async function Contact() {
         </div>
         <GridContainer
           title="Miesta výučby"
-          description="Doučovanie prebieha aj našej pobočke v Košiciach. Stačí si len vybrať."
+          description="Doučovanie prebieha aj našej pobočke v Košiciach - Alžbetina 18/2."
         >
           <div className="bg-slate-200 col-span-2">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d168539.40049426706!2d21.07438873562737!3d48.697297326391464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473ee01b67c6957b%3A0x400f7d1c6978bd0!2zS2_FoWljZQ!5e0!3m2!1sen!2ssk!4v1721051734873!5m2!1sen!2ssk"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2632.23604875626!2d21.254694211942684!3d48.72008111031035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473ee0655ce4d1d3%3A0xfec0ecb5d40eac1!2zQWzFvmJldGluYSAxOC8yLCAwNDAgMDEgS2_FoWljZQ!5e0!3m2!1sen!2ssk!4v1728379237730!5m2!1sen!2ssk"
               width="600"
               height="450"
               className="rounded-2xl w-full"
@@ -143,7 +131,10 @@ export default async function Contact() {
             <div className="grid grid-cols-1 gap-4 col-span-2">
               <FloatingTextarea label="Správa" name="message" />
             </div>
-            <button type="submit" className="col-span-2 flex items-center justify-center gap-3 w-full py-4 px-4 bg-indigo-600 text-white rounded-lg">
+            <button
+              type="submit"
+              className="col-span-2 flex items-center justify-center gap-3 w-full py-4 px-4 bg-indigo-600 text-white rounded-lg"
+            >
               <IconMessage size={24} />
               Odoslať
             </button>

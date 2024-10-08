@@ -1,7 +1,6 @@
 import StylePeople from "../graphics/StylePeople";
 import { IconUserCheck } from "@tabler/icons-react";
 import PersonLink from "../util/PersonLink";
-import { getLecturers } from "@/lib/records";
 import DoodleBothWays from "../graphics/DoodleBothWays";
 
 export default async function People({ people }) {
@@ -35,7 +34,7 @@ export default async function People({ people }) {
             Zoznam lektorov
           </a>
           <a
-            href="/o-nas/nabor"
+            href="/kontakt?recruit"
             className="w-full md:w-fit group text-sm font-semibold leading-6 border border-slate-500 py-3 px-8 lg:px-5 md:border-none rounded-lg text-slate-700 hover:text-slate-900 text-center md:text-left"
           >
             Pridaj sa k nám

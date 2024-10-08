@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default async function AboutUs() {
-  const members = await getLecturers();
+  const members = await getLecturers(100);
   const foundingMembers = await getFoundingMembers();
 
   return (
