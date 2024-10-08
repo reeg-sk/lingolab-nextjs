@@ -71,7 +71,7 @@ export default async function Contact({
             {contactPersons.map(({ text, name, email, phone }, index) => (
               <div
                 key={index}
-                className={`${text == "Nábor" && searchParams.recruit == "" ? "border-2 border-green-400 " : ""}flex flex-col gap-4 bg-gray-50/90 rounded-2xl py-12 px-10`}
+                className={`${text == "Nábor" && searchParams.recruit == "" ? "border-2 border-green-400 animate-rotate-green-border " : ""}flex flex-col gap-4 bg-gray-50/90 rounded-2xl py-12 px-10`}
               >
                 <div className="flex gap-2 mb-2">
                   <h3 className="text-lg font-semibold">{text}</h3>

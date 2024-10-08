@@ -19,6 +19,18 @@ const config: Config = {
         'pos-0': '0% 0%',
         'pos-100': '100% 100%',
       },
+      keyframes: {
+        rotateGreenBorder: {
+          '0%': { borderColor: 'transparent' },
+          '25%': { borderColor: 'green' },
+          '50%': { borderColor: 'transparent' },
+          '75%': { borderColor: 'green' },
+          '100%': { borderColor: 'transparent' },
+        },
+      },
+      animation: {
+        'rotate-green-border': 'rotateGreenBorder 8s linear infinite',
+      },
     },
   },
   plugins: [],
