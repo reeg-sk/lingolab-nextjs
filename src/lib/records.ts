@@ -89,6 +89,10 @@ async function getLecturer(slug) {
   return directus.request(readItem("lecturers", slug));
 }
 
+async function getCertificates() {
+  return directus.request(readItems("certificates"));
+}
+
 export {
   getGlobals,
   getSocials,
@@ -100,4 +104,5 @@ export {
   getLatestPosts,
   getFoundingMembers,
   getLecturer,
+  getCertificates,
 };
