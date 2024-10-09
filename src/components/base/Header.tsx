@@ -11,8 +11,8 @@ export default function Header({
   navLinks = [
     { title: "Domov", url: "/" },
     { title: "Kurzy", url: "/kurzy" },
+    { title: "Certifikáty", url: "/certifikaty" },
     { title: "O nás", url: "/o-nas" },
-    // { title: "Blog", url: "/blog" },
     { title: "Kontakt", url: "/kontakt" },
   ],
 }: {
@@ -45,9 +45,9 @@ export default function Header({
             <motion.div
               className={`${
                 navbarOpen
-                  ? "flex border-b flex-col py-4 absolute top-20 bg-white backdrop-blur-xl  w-full"
+                  ? "flex border-b flex-col py-4 absolute top-20 bg-white backdrop-blur-xl w-full"
                   : "hidden"
-              } lg:border-none lg:flex-row lg:py-0 lg:w-fit lg:bg-transparent lg:relative lg:top-0 ml-auto lg:flex lg:items-center lg:gap-3 px-4`}
+              } lg:border-none lg:flex-row lg:py-0 lg:w-fit lg:bg-transparent lg:relative lg:top-0 ml-auto lg:flex lg:items-center lg:gap-3 px-4 lg:pr-0`}
             >
               {navLinks.map(({ title, url }) => (
                 <Link
@@ -62,7 +62,7 @@ export default function Header({
               ))}
             </motion.div>
             <div className="flex items-center gap-3 mr-3 lg:mr-0">
-              <div>
+              {/* <div>
                 <a
                   className="inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 bg-slate-600 text-white hover:bg-slate-700 -my-2.5 ml-4 transition-all lg:mr-4 xl:mr-0"
                   href="https://klub.lingolab.sk/"
@@ -79,7 +79,7 @@ export default function Header({
                     </span>
                   </span>
                 </a>
-              </div>
+              </div> */}
               <button
                 onClick={() => setNavbarOpen(!navbarOpen)}
                 className="lg:hidden p-2 pr-4"

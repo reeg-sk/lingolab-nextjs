@@ -3,6 +3,7 @@ import { findFlagUrlByIso2Code } from "country-flags-svg";
 import directus from "@/lib/directus";
 import { notFound } from "next/navigation";
 import { readItem } from "@directus/sdk";
+import Image from "next/image";
 
 export const revalidate = 60
 
@@ -45,9 +46,10 @@ export default async function CourseDetail({ params }) {
           <div>
             <p className="text-xl">{page.type}</p>
             <div className="flex items-baseline gap-3">
-              <img
+              <Image
                 src={findFlagUrlByIso2Code(page.code)}
                 width={42}
+                height={42}
                 alt={`Kurz Angličtina`}
               />
               <h1 className="text-4xl font-semibold">{page.name}</h1>
@@ -62,8 +64,14 @@ export default async function CourseDetail({ params }) {
               <p>Cena</p>
               <p className="font-semibold text-base">od {page.online} €</p>
             </div>
-          </div>
-        </div>
+            <div className="grid gap-2 items-center">
+              <p>Počet osôb</p>
+                <p className="font-semibold text-base">
+                {page.type.split(" ")[1] === "Duo" ? "2" : "1"}
+                </p>
+              </div>
+              </div>
+            </div>
         <div>
           <iframe
             width="100%"

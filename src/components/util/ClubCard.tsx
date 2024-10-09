@@ -1,6 +1,7 @@
 import { IconArrowRight } from "@tabler/icons-react";
 import CourseClubStyle from "../graphics/CourseClubStyle";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CourseClub() {
   return (
@@ -12,21 +13,20 @@ export default function CourseClub() {
         <CourseClubStyle />
         <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Pridaj sa k našej komunite{" "}
-            <span className="text-indigo-400">Lingo klubu</span>
+            Príprava na jazykové <span className="text-indigo-400">certifikáty</span>
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-300">
-            Pre všetkých nadšencov jazykov, ktorí chcú vylepšiť svoje jazykové
-            schopnosti.
+            Pripravíme vás na štandardizované jazykové certifikáty, ktoré sú
+            uznávané na celom svete.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-            <a
-              href="https://klub.lingolab.sk"
+            <Link
+              href="/certifikaty"
               className="flex gap-2 rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               Viac informácií
               <IconArrowRight size={20} />
-            </a>
+            </Link>
           </div>
         </div>
         <div className="relative mt-16 h-80 lg:mt-8">

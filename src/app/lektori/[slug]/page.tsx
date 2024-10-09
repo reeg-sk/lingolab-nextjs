@@ -49,7 +49,7 @@ export default async function Lecturer({ params }) {
             <h1 className="text-3xl mt-2 font-semibold sm:text-5xl sm:leading-[3.5rem] text-balance">
               {lecturer.name}
             </h1>
-            <div className="flex gap-2 text-lg font-semibold leading-6 text-slate-700">
+            <div className="flex gap-2 items-baseline text-lg font-semibold leading-6 text-slate-700">
               <Image
                 src={findFlagUrlByIso2Code(lecturer.languagecode)}
                 width={24}

@@ -18,7 +18,7 @@ export default function LanguageList({
     <>
       {languages.map(({ code, name, slug, type, online, lecturers }, idx) => (
         <Link
-          key={`${slug}-${type}-${idx}`}
+          key={slug}
           href={`/kurzy/${slug}`}
           className={`group relative p-6 py-8 border-separate border border-slate-100 transition-all hover:bg-slate-100 bg-white hover:z-10 hover:border-indigo-400 grid grid-cols-2 ${
             !isHero ? "md:grid-cols-2" : ""
@@ -61,7 +61,7 @@ export default function LanguageList({
           </div> */}
           {!isHero && (
             <div className="hidden md:block justify-self-end">
-              <p className="p-2 px-4 flex gap-2 items-center border border-primary rounded-lg text-primary group-hover:bg-indigo-100">
+              <p className={`p-2 px-4 flex gap-2 items-center border border-primary rounded-lg text-primary ${isHero ? "group-hover:bg-indigo-100" : "group-hover:bg-indigo-700 group-hover:text-white"}`}>
                 <IconCalendarCheck />
                 Rezervovať
               </p>
