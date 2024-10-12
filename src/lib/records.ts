@@ -28,6 +28,7 @@ async function getLecturers(limit = 6) {
     readItems("lecturers", {
       limit: Number(limit),
       status: "published",
+      sort: ["languages"],
       fields: [
         "id",
         "name",
@@ -98,7 +99,24 @@ async function getLatestPosts() {
 }
 
 async function getLecturer(slug) {
-  return directus.request(readItem("lecturers", slug));
+  return directus.request(
+    readItem("lecturers", slug, {
+      fields: [
+        "id",
+        "name",
+        "avatar",
+        "slug",
+        {
+          languages: [
+            {
+              languages_slug: ["name", "code"],
+            },
+          ],
+        },
+      ],
+      deep: { languages: { _limit: 3 } },
+    })
+  );
 }
 
 async function getCertificates() {
