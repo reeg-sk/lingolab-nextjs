@@ -5,7 +5,7 @@ import { getLanguages } from "@/lib/records";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = siteMetadata.siteUrl;
 
-  const routes = ["", "kurzy", "uvodna-konzultacia", "blog", "o-nas", "kontakt"].map((route, i) => ({
+  const routes = ["", "kurzy", "certifikaty", "uvodna-konzultacia", "o-nas", "kontakt"].map((route, i) => ({
     url: `${siteUrl}/${route}`,
     lastModified: new Date().toISOString().split("T")[0],
     priority: 1 - i * 0.1,

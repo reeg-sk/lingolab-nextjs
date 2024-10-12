@@ -49,15 +49,15 @@ export default async function Lecturer({ params }) {
             <h1 className="text-3xl mt-2 font-semibold sm:text-5xl sm:leading-[3.5rem] text-balance">
               {lecturer.name}
             </h1>
-            <div className="flex gap-2 items-baseline text-lg font-semibold leading-6 text-slate-700">
+            {/* <div className="flex gap-2 items-baseline text-lg font-semibold leading-6 text-slate-700">
               <Image
-                src={findFlagUrlByIso2Code(lecturer.languagecode)}
+                src={findFlagUrlByIso2Code(lecturer.languages[0].languages_slug.name)}
                 width={24}
                 height={24}
-                alt={`Doučuje jazyk - ${lecturer.language}`}
+                alt={`Doučuje jazyk - ${lecturer.languages[0].languages_slug.name}`}
               />
-              <p>{lecturer.language}</p>
-            </div>
+              <p>{lecturer.languages[0].languages_slug.name}</p>
+            </div> */}
           </div>
           <div className="flex flex-col gap-4">
             <div className="gap-4 bg-white border rounded-lg p-8 w-full">

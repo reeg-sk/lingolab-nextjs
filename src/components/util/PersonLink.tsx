@@ -22,15 +22,17 @@ export default function PersonLink({ person }) {
         <h3 className="text-lg font-semibold leading-7 tracking-tight text-gray-900">
           {person.name}
         </h3>
-        <div className="flex gap-2 text-base leading-6 text-slate-700">
-          <Image
-            src={findFlagUrlByIso2Code(person.languagecode)}
-            width={24}
-            height={24}
-            alt={`Doučuje jazyk - ${person.language}`}
-          />
-          <p>{person.language}</p>
-        </div>
+        {person.languages.length > 0 && (
+          <div className="flex gap-2 text-base leading-6 text-slate-700">
+            <Image
+              src={findFlagUrlByIso2Code(person.languages[0].languages_slug.code)}
+              width={24}
+              height={24}
+              alt={`Doučuje jazyk - ${person.languages[0].languages_slug.name}`}
+            />
+            <p>{person.languages[0].languages_slug.name}</p>
+          </div>
+        )}
       </div>
       <p
         className="opacity-90 md:opacity-0 transition-opacity delay-50 group-hover:opacity-90 flex w-12 h-12 rounded-full justify-center items-center bg-slate-100 ml-auto mr-4"
