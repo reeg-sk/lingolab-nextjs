@@ -35,12 +35,6 @@ export default async function Courses() {
 
         <div className="relative grid lg:lg:grid-cols-[minmax(540px,_1fr)_minmax(480px,520px)] gap-x-4">
           <div className="md:mb-12">
-            {/* Wrap to client component and make a switch */}
-            {/* <select name="" id="">
-              <option value="">Individuálne</option>
-              <option value="">Vo dvojici</option>
-            </select>
-            individuálne - vo dvojici */}
             {[...new Set(languages.map((language) => language.type))].map(
               (type) => (
                 <CourseListing
