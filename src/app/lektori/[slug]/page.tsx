@@ -4,7 +4,6 @@ import { getLecturer } from "@/lib/records";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { findFlagUrlByIso2Code } from "country-flags-svg";
-import { IconMapPin } from "@tabler/icons-react";
 
 export const revalidate = 60;
 
