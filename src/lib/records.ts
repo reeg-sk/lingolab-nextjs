@@ -123,6 +123,10 @@ async function getCertificates() {
   return directus.request(readItems("certificates"));
 }
 
+async function getAboutUs() {
+  return directus.request(readSingleton("aboutus"));
+}
+
 export {
   getGlobals,
   getSocials,
@@ -135,4 +139,5 @@ export {
   getFoundingMembers,
   getLecturer,
   getCertificates,
+  getAboutUs,
 };
