@@ -1,3 +1,4 @@
+import Heading from "@/components/base/Heading";
 import AboutStyle from "@/components/graphics/AboutStyle";
 import StyleIndex from "@/components/graphics/StyleIndex";
 import PersonFoundingLink from "@/components/util/PersonFoundingLink";
@@ -26,9 +27,7 @@ export default async function AboutUs() {
         className="relative container mx-auto max-w-7xl flex justify-center flex-col mb-12 md:mb-0"
       >
         <AboutStyle />
-        <h1 className="mt-6 text-3xl mb-8 font-extrabold sm:text-5xl sm:leading-[3.5rem] text-balance">
-          O nás
-        </h1>
+        <Heading>O nás</Heading>
         <div className="grid lg:grid-cols-2 mt-2 gap-x-4">
           <div>
             <Image

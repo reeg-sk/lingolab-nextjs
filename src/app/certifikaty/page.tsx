@@ -1,3 +1,4 @@
+import Heading from "@/components/base/Heading";
 import StyleIndex from "@/components/graphics/StyleIndex";
 import CourseListing from "@/components/util/CourseListing";
 import Details from "@/components/util/Details";
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
   title: "Príprava na certifikáty – LingoLab",
   description: "",
 };
+
 export default async function Certificates() {
   const certificates = await getCertificates();
   const faq = await getCoursesFaq() as unknown as { certificates: { q: string; a: string }[] };
@@ -24,11 +26,7 @@ export default async function Certificates() {
         id="certifikaty"
         className="relative container mx-auto max-w-7xl flex justify-center flex-col mb-12 md:mb-0"
       >
-        <div className="mt-6">
-          <h1 className="text-3xl mb-8 font-extrabold sm:text-5xl sm:leading-[3.5rem] text-balance">
-            Príprava na certifikáty
-          </h1>
-        </div>
+        <Heading>Príprava na certifikáty</Heading>
 
         <div className="relative grid lg:lg:grid-cols-[minmax(540px,_1fr)_minmax(480px,520px)] gap-x-4">
           <div className="md:mb-12">

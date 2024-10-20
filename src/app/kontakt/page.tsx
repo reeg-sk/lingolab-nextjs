@@ -1,3 +1,4 @@
+import Heading from "@/components/base/Heading";
 import Socials from "@/components/base/Socials";
 import StyleIndex from "@/components/graphics/StyleIndex";
 import StylePeople from "@/components/graphics/StylePeople";
@@ -58,11 +59,7 @@ export default async function Contact({
         id="kontakt"
         className="relative container mx-auto max-w-7xl flex justify-center flex-col mb-12 md:mb-0"
       >
-        <div className="flex justify-between items-center gap-4 mt-8 mb-14">
-          <h1 className="text-3xl font-extrabold sm:text-5xl sm:leading-[3.5rem] text-balance">
-            Kontakt
-          </h1>
-        </div>
+        <Heading>Kontakt</Heading>
         <GridContainer
           title="Kontaktujte nás"
           description="Máte otázky alebo návrhy? Neváhajte nás kontaktovať. Radi vám pomôžeme."

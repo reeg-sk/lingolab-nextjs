@@ -1,3 +1,4 @@
+import Heading from "@/components/base/Heading";
 import StyleIndex from "@/components/graphics/StyleIndex";
 import ClubCard from "@/components/util/ClubCard";
 import CourseListing from "@/components/util/CourseListing";
@@ -26,11 +27,7 @@ export default async function Courses() {
         id="zoznam"
         className="relative container mx-auto max-w-7xl flex justify-center flex-col mb-12 md:mb-0"
       >
-        <div className="mt-6">
-          <h1 className="text-3xl mb-8 font-extrabold sm:text-5xl sm:leading-[3.5rem] text-balance">
-            Dostupné kurzy
-          </h1>
-        </div>
+        <Heading>Dostupné kurzy</Heading>
 
         <div className="relative grid lg:lg:grid-cols-[minmax(540px,_1fr)_minmax(480px,520px)] gap-x-4">
           <div className="md:mb-12">
