@@ -56,6 +56,7 @@ export default function Hero({ languages }) {
         alt="Hlavná stránka LingoLab"
         // layout="responsive"
         className="lg:absolute top-10 right-0"
+        priority
       />
       {/* <HeroVideo src="/videos/promo-video.mp4" /> */}
       <div className="mt-12 mb-16 lg:mb-32 m-4">

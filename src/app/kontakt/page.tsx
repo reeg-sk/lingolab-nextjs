@@ -117,30 +117,6 @@ export default async function Contact({
           </div>
         </GridContainer>
         <hr className="my-12 lg:my-24 bg-gray-50 lg:bg-gray-300" />
-        <GridContainer
-          title="Kontaktný formulár"
-          description="Alternatívne nás môžete kontaktovať aj pomocou formulára. Stačí ho vyplniť a my sa vám čo najskôr ozveme."
-        >
-          <form className="grid lg:grid-cols-2 col-span-2 gap-8">
-            <div className="grid col-span-2 md:col-col-span-1 grid-cols-1 gap-4">
-              <FloatingInput type="text" label="Meno" name="name" />
-            </div>
-            <div className="grid col-span-2 md:col-col-span-1 grid-cols-1 gap-4">
-              <FloatingInput type="email" label="Email" name="email" />
-            </div>
-            <div className="grid grid-cols-1 gap-4 col-span-2">
-              <FloatingTextarea label="Správa" name="message" />
-            </div>
-            <button
-              type="submit"
-              className="col-span-2 flex items-center justify-center gap-3 w-full py-4 px-4 bg-indigo-600 text-white rounded-lg"
-            >
-              <IconMessage size={24} />
-              Odoslať
-            </button>
-          </form>
-        </GridContainer>
-        <hr className="mt-12 lg:mt-24 bg-gray-300" />
         <div id="socialne-siete" className="relative pt-12 lg:pt-24 pb-12">
           <h3 className="text-center text-3xl font-semibold my-8 mb-8 md:mb-16">
             Nájdete nás aj na sociálnych sieťach
