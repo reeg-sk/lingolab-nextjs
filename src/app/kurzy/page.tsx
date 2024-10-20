@@ -17,8 +17,7 @@ export const metadata: Metadata = {
 
 export default async function Courses() {
   const languages = await getLanguages();
-  // @ts-ignore - questions is not defined?
-  const { questions } = await getCoursesFaq();
+  const faq = await getCoursesFaq() as unknown as { questions: { q: string; a: string }[] };
 
   return (
     <div className="px-4">
@@ -65,7 +64,7 @@ export default async function Courses() {
         </div>
       </section>
       <ClubCard />
-      {questions ? (
+      {faq.questions ? (
         <section
           id="faq"
           className="relative container mx-auto max-w-7xl flex justify-center flex-col mb-24 pt-32"
@@ -77,13 +76,13 @@ export default async function Courses() {
           </div>
           <div className="grid lg:grid-cols-2 gap-4">
             <div>
-              {questions.splice(0, questions.length / 2).map(({ q, a }, id) => (
+              {faq.questions.splice(0, faq.questions.length / 2).map(({ q, a }, id) => (
                 <Details key={q} isOpen={id === 0} question={q} answer={a} />
               ))}
             </div>
             <div>
-              {questions
-                .splice(questions.length / 2 - 1)
+              {faq.questions
+                .splice(faq.questions.length / 2 - 1)
                 .map(({ q, a }, id) => (
                   <Details key={q} isOpen={id === 0} question={q} answer={a} />
                 ))}
