@@ -1,6 +1,6 @@
 import LanguageList from "./LanguageList";
 
-export default function CourseListing({ title, courses }) {
+export default function CourseListing({ title, courses, path }) {
   return (
     <div>
       <div className="md:flex gap-2 items-baseline mb-4">
@@ -9,7 +9,7 @@ export default function CourseListing({ title, courses }) {
         {title === "Doučovanie Uno" && <p className="text-slate-700">pre 1 osobu</p>}
       </div>
       <div className="relative grid mb-12">
-        <LanguageList languages={courses} />
+        <LanguageList languages={courses} path={path} />
       </div>
     </div>
   );

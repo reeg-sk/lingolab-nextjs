@@ -33,6 +33,7 @@ export default async function Certificates() {
             {[...new Set(certificates.map((cert) => cert.language))].map(
               (type) => (
                 <CourseListing
+                  path="/certifikaty/"
                   key={type}
                   title={type}
                   courses={certificates.filter(
