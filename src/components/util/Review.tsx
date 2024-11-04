@@ -1,15 +1,18 @@
 import { IconStarFilled } from "@tabler/icons-react";
 import assetUrl, { getImageUrl } from "@/data/siteMetadata";
+import Image from 'next/image';
 
 export default function Review({ avatar, name, stars, date_created, content }) {
   return (
-    <>
+    <div className="mb-6 pb-6 border-b border-slate-100">
       <div className="flex items-center mb-4">
-        <img
+        <Image
           src={getImageUrl(avatar, name)}
           loading="lazy"
           alt="Avatar"
           className="w-12 h-12 rounded-full mr-4"
+          width={64}
+          height={64}
         />
         <h3 className="text-lg font-semibold">
           <span>{name}</span>
@@ -31,6 +34,6 @@ export default function Review({ avatar, name, stars, date_created, content }) {
         </p>
       </div>
       <p className="text-gray-600">{content}</p>
-    </>
+    </div>
   );
 }

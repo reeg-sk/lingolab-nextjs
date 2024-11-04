@@ -104,6 +104,8 @@ async function getLecturer(slug) {
       fields: [
         "id",
         "name",
+        "description",
+        "hobbies",
         "avatar",
         "slug",
         {
@@ -112,6 +114,9 @@ async function getLecturer(slug) {
               languages_slug: ["name", "code"],
             },
           ],
+        },
+        {
+          reviews: ["id", "name", "avatar", "stars", "content", "date_created"],
         },
       ],
       deep: { languages: { _limit: 3 } },

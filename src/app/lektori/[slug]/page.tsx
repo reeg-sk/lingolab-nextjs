@@ -4,6 +4,8 @@ import { getLecturer } from "@/lib/records";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { findFlagUrlByIso2Code } from "country-flags-svg";
+import { Josefin_Sans } from "next/font/google";
+import Review from "@/components/util/Review";
 
 export const revalidate = 60;
 
@@ -37,7 +39,7 @@ export default async function Lecturer({ params }) {
         className="relative container mx-auto max-w-7xl flex justify-center flex-col mb-12 md:mb-0"
       >
         <div className="grid lg:grid-cols-[406px_minmax(640px,_1fr)] mt-2 gap-x-4 mx-4">
-          <div className="sticky grid gap-4 bg-white border rounded-lg p-8 w-full">
+          <div className="sticky flex flex-col gap-4 bg-white border rounded-lg p-8 w-full">
             <Image
               className="relative rounded-full border-4 border-white"
               src={getImageUrl(lecturer.avatar, lecturer.name)}
@@ -50,7 +52,9 @@ export default async function Lecturer({ params }) {
             </h1>
             <div className="flex gap-2 items-baseline text-lg font-semibold leading-6 text-slate-700">
               <Image
-                src={findFlagUrlByIso2Code(lecturer.languages[0].languages_slug.code)}
+                src={findFlagUrlByIso2Code(
+                  lecturer.languages[0].languages_slug.code
+                )}
                 width={24}
                 height={24}
                 alt={`Doučuje jazyk - ${lecturer.languages[0].languages_slug.name}`}
@@ -63,10 +67,10 @@ export default async function Lecturer({ params }) {
               <h2 className="text-2xl mt-2 font-semibold sm:leading-[3.5rem] text-balance">
                 O mne
               </h2>
-              <p className="text-balance mb-2">
+              <p className="text-balance mb-4">
                 {lecturer.description || "Zatiaľ tu nič nie je."}
               </p>
-              <ul className="flex gap=ľ">
+              <ul className="flex flex-col md:flex-row gap-2">
                 {lecturer.hobbies?.map(({ name, Icon }, index) => (
                   <li
                     key={index}
@@ -78,12 +82,25 @@ export default async function Lecturer({ params }) {
               </ul>
             </div>
             <div className="gap-4 bg-white border rounded-lg p-8 w-full">
-              <h2 className="text-2xl mt-2 font-semibold sm:leading-[3.5rem] text-balance">
+              <h2 className="text-2xl my-2 font-semibold sm:leading-[3.5rem] text-balance">
                 Recenzie
               </h2>
-              <p className="text-balance mb-2">
-                Zatiaľ tu žiadne nie sú.
-              </p>
+              <div className="grid gap-1 text-balance mb-2">
+                {lecturer.reviews == 0 ? (
+                  <p>Lektor zatiaľ nemá žiadne recenzie.</p>
+                ) : (
+                  <>
+                    {lecturer.reviews?.map(
+                      ({ id, name, avatar, stars, content, date_created }) => (
+                        <Review
+                          key={id}
+                          {...{ name, avatar, stars, content, date_created }}
+                        />
+                      )
+                    )}
+                  </>
+                )}
+              </div>
             </div>
           </div>
         </div>

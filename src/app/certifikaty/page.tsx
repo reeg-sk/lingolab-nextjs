@@ -59,7 +59,7 @@ export default async function Certificates() {
           </div>
         </div>
       </section>
-      {faq?.certificates ? (
+      {faq?.certificates && faq.certificates.length > 0 ? (
         <section
           id="faq"
           className="relative container mx-auto max-w-7xl flex justify-center flex-col mb-24 pt-32"
@@ -85,7 +85,7 @@ export default async function Certificates() {
           </div>
         </section>
       ) : (
-        <hr className="mb-24" />
+        <hr className="border-transparent mb-24" />
       )}
     </div>
   );
