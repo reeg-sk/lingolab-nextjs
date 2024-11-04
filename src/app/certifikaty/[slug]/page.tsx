@@ -27,7 +27,7 @@ async function getPage(slug: string) {
     const certificate = await getPage(params.slug);
    
     return {
-      title: `${certificate.title} – LingoLab`,
+      title: `${certificate.name} – LingoLab`,
       description: certificate.description,
     }
   }
