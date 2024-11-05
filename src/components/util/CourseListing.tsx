@@ -1,6 +1,10 @@
 import LanguageList from "./LanguageList";
 
-export default function CourseListing({ title, courses, path }) {
+export default function CourseListing({ title, courses, path }: {
+  title: string;
+  courses: any[];
+  path?: string;
+}) {
   return (
     <div>
       <div className="md:flex gap-2 items-baseline mb-4">
