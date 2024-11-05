@@ -36,7 +36,7 @@ export default function LanguageList({
           <Link
             key={slug}
             href={`${path}${slug}`}
-            className={`group relative p-6 py-8 border-separate border border-slate-100 transition-all hover:bg-slate-100 bg-white hover:z-10 hover:border-indigo-400 grid grid-cols-2 ${
+            className={`group relative p-6 py-8 border-separate border border-slate-100 transition-all hover:bg-slate-100 bg-white hover:z-10 hover:border-indigo-400 grid ${path ? 'md:grid-cols-2' : 'grid-cols-2'} ${
               !isHero ? "md:grid-cols-2" : ""
             } items-center md:justify-start`}
             onMouseEnter={() =>

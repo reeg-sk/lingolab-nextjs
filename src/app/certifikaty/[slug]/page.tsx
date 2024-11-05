@@ -5,38 +5,36 @@ import { findFlagUrlByIso2Code } from "country-flags-svg";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
-export const revalidate = 60
+export const revalidate = 60;
 
 async function getPage(slug: string) {
-    try {
-      const page = await directus.request(
-        readItem("certificates", slug, {
+  try {
+    const page = await directus.request(
+      readItem("certificates", slug, {
         //   fields: ["title", "content", "description", "date_created", "cover", "user_created"],
-        })
-      );
-      return page;
-    } catch (error) {
-      notFound();
-    }
+      })
+    );
+    return page;
+  } catch (error) {
+    notFound();
   }
-  
-  // TODO - https://nextjs.org/docs/app/building-your-application/optimizing/metadata#dynamic-image-generation in the future
-  export async function generateMetadata(
-    { params }
-  ) { 
-    const certificate = await getPage(params.slug);
-   
-    return {
-      title: `${certificate.name} – LingoLab`,
-      description: certificate.description,
-    }
-  }
+}
+
+// TODO - https://nextjs.org/docs/app/building-your-application/optimizing/metadata#dynamic-image-generation in the future
+export async function generateMetadata({ params }) {
+  const certificate = await getPage(params.slug);
+
+  return {
+    title: `${certificate.name} – LingoLab`,
+    description: certificate.description,
+  };
+}
 
 export default async function CertificateDetail({ params }) {
-    const certificate = await getPage(params.slug);
+  const certificate = await getPage(params.slug);
 
-    return (
-      <div className="px-4 mb-24">
+  return (
+    <div className="px-4 mb-24">
       <StyleIndex />
       <section
         id="detail"
@@ -57,21 +55,20 @@ export default async function CertificateDetail({ params }) {
           </div>
           <div className="flex gap-6 lg:gap-12 justify-start md:px-4">
             <div className="grid gap-2 items-center">
-              <p>Počet hodiny</p>
-              <p className="font-semibold text-base">{certificate.num_courses}</p>
+              <p>Počet hodín</p>
+              <p className="font-semibold text-base">
+                {certificate.num_courses}
+              </p>
             </div>
             <div className="grid gap-2 items-center">
               <p>Cena</p>
-              <p className="font-semibold text-base">{certificate.price * certificate.num_courses} €</p>
+              <p className="font-semibold text-base">
+                {certificate.price * certificate.num_courses} €
+              </p>
             </div>
-            <div className="grid gap-2 items-center">
-              <p>Počet osôb</p>
-                <p className="font-semibold text-base">
-                {/* {certificate.type.split(" ")[1] === "Duo" ? "2" : "1"} */}
-                </p>
-              </div>
-              </div>
-            </div>
+            
+          </div>
+        </div>
         <div>
           <iframe
             width="100%"
@@ -81,5 +78,5 @@ export default async function CertificateDetail({ params }) {
         </div>
       </section>
     </div>
-    )
+  );
 }
