@@ -15,7 +15,7 @@ export default function FreeLecture() {
         <LectureOffer isHero className="relative" />
         <div className="overflow-hidden">
           <Image
-            src="https://cdn.lingolab.sk/static/team.jpg"
+            src="https://cdn.lingolab.sk/uploads/b9726efe-d8ad-474e-b810-d87a37a4bf1d.jpg"
             alt="Ukážka doučovacej hodiny"
             className="w-[48rem] object-[-4.8cm_0] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
             width={2432}
