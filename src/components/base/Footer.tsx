@@ -31,6 +31,7 @@ export default async function Footer() {
               <Link
                 key={url}
                 href={url}
+                target="_blank"
                 className="block mt-3 text-slate-200 hover:text-white"
               >
                 {title}
