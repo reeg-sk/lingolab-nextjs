@@ -17,7 +17,7 @@ export default function Pros({
     {
       title: "Hybridná výučba",
       description:
-        "Prezenčne alebo online, nemáte sa čoho obávať už nezmeškate žiadnu hodinu.",
+        "Prezenčne alebo online, nemáte sa čoho obávať a už nezmeškate žiadnu hodinu.",
       Icon: IconWifi,
     },
   ],
